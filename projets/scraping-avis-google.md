@@ -51,7 +51,7 @@ DataforSEO est un fournisseur d’API permettant de scrapper les différentes do
 - Une requête SQL est réalisée afin de valider que les avis récupérés ne sont pas déjà dans la base de données afin d’éviter les doublons. 
 Chaque avis est ensuite enregistré dans la base de données.
 
-![Seconde partie de l'automatisation n8n](../images/projets/scraping-avis-google/N8N-Scrapper-Part-2.png)
+![Seconde partie de l'automatisation n8n](../../images/projets/scraping-avis-google/N8N-Scrapper-Part-2.png)
 *Seconde partie de l'automatisation n8n*
 
 ## Prochaines étapes et améliorations possibles
