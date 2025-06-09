@@ -45,6 +45,17 @@ a {
     color: inherit;
 }
 
+/* Règle spécifique avec spécificité plus élevée */
+.project-page .project-detail .project-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.project-page .project-detail .project-content a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
 ul {
     list-style: none;
 }
@@ -826,15 +837,6 @@ nav {
     top: 15px;
     left: -2px;
     font-size: 1.2rem;
-}
-
-.project-content p a {
-    color: var(--primary-color) !important;
-    text-decoration: underline !important;
-}
-
-.project-content p a:hover {
-    color: var(--text-color) !important;
 }
 
 .project-navigation {
