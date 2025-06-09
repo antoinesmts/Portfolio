@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Scraping et stockage d'avis Google",
+        "description": "À l’aide de n8n, cette automatisation permet de récupérer les avis Google publiés pour plusieurs propriétés et les ajouter de façon régulière dans une base de données.",
+        "image": "../images/projets/scraping-avis-google/Avis-Google-N8N.png",
+        "categories": ["Automatisation", "n8n"],
+        "url": "projets/scraping-avis-google"
+    },
+    {
+        "title": "Analyse RFM",
+        "description": "Segmentation client en SQL en appliquant la méthode RFM (Récence, Fréquence, Montant).",
+        "image": "../images/projets/rfm-analysis/SQL-RFM.png",
+        "categories": ["SQL"],
+        "url": "projets/rfm-analysis"
+    },
+    {
+        "title": "Analyse de la segmentation client",
+        "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
+        "image": "../images/projets/analyse-segmentation-client/RFM-Power-BI.png",
+        "categories": ["Power BI"],
+        "url": "projets/analyse-segmentation-client"
+    },
+    {
+        "title": "BBC Sounds to Spotify Playlist",
+        "description": "Script Python permettant de récupérer la playlist d'un programme BBC Sounds et de l'importer dans une playlist Spotify.",
+        "image": "../images/projets/bbc-sounds-spotify/BBC-to-Spotify.png",
+        "categories": ["Automatisation", "Python", "IA"],
+        "url": "projets/bbc-sounds-spotify"
+    }
+]

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Mon Portfolio</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" type="image/jpg" href="../../images/favicon.ico"/>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="../../">Antoine Smeets</a></div>
+                <ul class="nav-links">
+                    <li><a href="../../">Accueil</a></li>
+                    <li><a href="../../#projets">Projets</a></li>
+                    <li><a href="../../#a-propos">À propos</a></li>
+                    <li><a href="../../#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-page">
+        <div class="container">
+            <article class="project-detail">
+                <a href="../../#projets" class="back-link"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+                
+                <div class="project-header">
+                    <h1>{{title}}</h1>
+                    <div class="project-meta">
+                        <div class="project-categories">
+                            {{categories}}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    {{content}}
+                </div>
+                
+                <nav class="project-navigation">
+                    <a href="../../#projets" class="btn secondary"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+                </nav>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Antoine Smeets</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

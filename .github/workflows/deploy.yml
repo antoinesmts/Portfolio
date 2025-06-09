@@ -1,0 +1,42 @@
+name: Deploy Website
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+    
+    - name: Install dependencies
+      run: |
+        npm install -g @11ty/eleventy
+        npm install markdown-it
+        npm install markdown-it-front-matter
+        npm install fs-extra
+    
+    - name: Build site
+      run: |
+        mkdir -p _site
+        cp -r css js images _site/
+        node .github/scripts/build.js
+    
+    - name: Deploy to FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./_site/
+        server-dir: ${{ secrets.FTP_SERVER_DIR }}/
