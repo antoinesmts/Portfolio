@@ -828,14 +828,13 @@ nav {
     font-size: 1.2rem;
 }
 
-article a {
+.project-content a {
     color: var(--primary-color) !important;
     text-decoration: underline !important;
 }
 
-article a:hover {
+.project-content a:hover {
     color: var(--text-color) !important;
-    text-decoration: underline !important;
 }
 
 .project-navigation {

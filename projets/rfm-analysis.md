@@ -1,5 +1,5 @@
 ---
-title: Analyse RFM - Segmentation client avancée
+title: Analyse RFM - Segmentation client
 description: Segmentation client en SQL avec la méthode RFM (Récence, Fréquence, Montant) pour des stratégies marketing ciblées.
 image: ../images/projets/rfm-analysis/SQL-RFM.png
 date: 2025-05-06
