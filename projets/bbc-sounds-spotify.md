@@ -2,7 +2,7 @@
 title: BBC Sounds to Spotify Playlist
 description: Ce script Python permet de récupérer la playlist d’un programme BBC Sounds et de l’importer dans une playlist Spotify.
 image: ../images/projets/bbc-sounds-spotify/BBC-to-Spotify.png
-date: 2025-05-01
+date: 2025-05-02
 categories: [Automatisation, Python, IA]
 ---
 ![Aperçu du code](../images/projets/bbc-sounds-spotify/BBC-to-Spotify.png)
