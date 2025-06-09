@@ -45,17 +45,6 @@ a {
     color: inherit;
 }
 
-/* Règle spécifique avec spécificité plus élevée */
-.project-page .project-detail .project-content a {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
-.project-page .project-detail .project-content a:hover {
-    color: var(--text-color);
-    text-decoration: underline;
-}
-
 ul {
     list-style: none;
 }
@@ -723,6 +712,16 @@ nav {
 
 .project-content p {
     margin-bottom: 1.2rem;
+}
+
+.project-page .project-detail .project-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.project-page .project-detail .project-content a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
 }
 
 .project-content ul,
