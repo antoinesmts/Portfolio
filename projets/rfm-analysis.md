@@ -1,23 +1,40 @@
 ---
-title: Analyse RFM
-description: Segmentation client en SQL en appliquant la méthode RFM (Récence, Fréquence, Montant).
+title: Analyse RFM - Segmentation client avancée
+description: Segmentation client en SQL avec la méthode RFM (Récence, Fréquence, Montant) pour des stratégies marketing ciblées.
 image: ../images/projets/rfm-analysis/SQL-RFM.png
 date: 2025-05-06
 categories: [SQL]
 ---
-![Aperçu du code](../../images/projets/rfm-analysis/SQL-RFM.png)
+
+![Aperçu du code SQL RFM](../../images/projets/rfm-analysis/SQL-RFM.png)
 
 ## Présentation du projet
+Ce projet implémente une segmentation client en utilisant la méthodologie RFM (Récence, Fréquence, Montant) directement en SQL sous Snowflake. 
 
-Dans le cadre de ce projet, j’ai segmenté la clientèle, à partir d’une base de données générée en Python, en appliquant la méthode RFM (Récence, Fréquence, Montant). Cette analyse, développée en SQL sous Snowflake, permet de classer les clients selon leur valeur en attribuant un poids spécifique à chacun des trois critères, afin d’ajuster précisément les stratégies marketing.
+### Objectifs principaux
+- **Classer** les clients selon leur valeur commerciale
+- **Identifier** les opportunités de croissance et de rétention
+- **Optimiser** les ressources marketing grâce à une segmentation data-driven
 
-En enrichissant cette segmentation avec des données complémentaires (produits achetés, canaux d’acquisition), il serait possible de :
-1. Personnaliser les campagnes marketing en adaptant les messages aux profils clients.
-2. Prévenir l’attrition en détectant précocement la baisse d’engagement.
-3. Maximiser la rentabilité en priorisant les segments clients les plus prometteurs.
+### Méthodologie RFM
+La méthode RFM évalue trois dimensions clés :
+1. **Récence** : Délai depuis le dernier achat
+2. **Fréquence** : Nombre d'achats sur une période
+3. **Montant** : Valeur totale des achats
 
-## Code
+Chaque dimension est pondérée (20% Récence, 40% Fréquence, 40% Montant) pour refléter l'importance stratégique.
 
+## Applications concrètes
+Enrichie avec des données complémentaires (produits achetés, canaux d'acquisition), cette analyse permet de :
+
+**Personnalisation marketing** : Adapter les messages aux profils clients spécifiques  
+**Prévention de l'attrition** : Détecter précocement la baisse d'engagement  
+**Maximisation ROI** : Concentrer les efforts sur les segments les plus prometteurs  
+**Cross-selling** : Identifier les opportunités de ventes additionnelles  
+
+## Implémentation technique
+
+### Structure du code SQL
 ```SQL 
 WITH RFM_PREP AS(
     SELECT
@@ -66,5 +83,10 @@ SELECT
     END AS SEGMENT
 FROM RFM_WEIGHTED
 ```
+
+## Améliorations possibles
+- Intégration avec des outils de BI (Tableau, Power BI)
+- Automatisation du processus et intégration avec un CRM
+- Enrichissement avec du machine learning pour la prédiction de comportement
 
 [Voir le projet sur GitHub.](https://github.com/antoinesmts/sql_rfm_analysis/)

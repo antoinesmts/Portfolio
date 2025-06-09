@@ -828,6 +828,16 @@ nav {
     font-size: 1.2rem;
 }
 
+.project-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.project-content a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
 .project-navigation {
     margin-top: 50px;
     padding-top: 30px;
