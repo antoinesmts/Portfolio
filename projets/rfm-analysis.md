@@ -2,7 +2,7 @@
 title: Analyse RFM
 description: Segmentation client en SQL en appliquant la méthode RFM (Récence, Fréquence, Montant).
 image: ../images/projets/rfm-analysis/SQL-RFM.png
-date: 2025-05-05
+date: 2025-05-06
 categories: [SQL]
 ---
 ![Aperçu du code](../images/projets/rfm-analysis/SQL-RFM.png)
