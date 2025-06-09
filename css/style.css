@@ -828,12 +828,12 @@ nav {
     font-size: 1.2rem;
 }
 
-.project-content a {
+article a {
     color: var(--primary-color) !important;
     text-decoration: underline !important;
 }
 
-.project-content a:hover {
+article a:hover {
     color: var(--text-color) !important;
     text-decoration: underline !important;
 }
