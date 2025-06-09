@@ -5,7 +5,7 @@ image: ../images/projets/rfm-analysis/SQL-RFM.png
 date: 2025-05-06
 categories: [SQL]
 ---
-![Aperçu du code](../images/projets/rfm-analysis/SQL-RFM.png)
+![Aperçu du code](../../images/projets/rfm-analysis/SQL-RFM.png)
 
 ## Présentation du projet
 

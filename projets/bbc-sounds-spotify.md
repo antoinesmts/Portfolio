@@ -5,7 +5,7 @@ image: ../images/projets/bbc-sounds-spotify/BBC-to-Spotify.png
 date: 2025-05-02
 categories: [Automatisation, Python, IA]
 ---
-![Aperçu du code](../images/projets/bbc-sounds-spotify/BBC-to-Spotify.png)
+![Aperçu du code](../../images/projets/bbc-sounds-spotify/BBC-to-Spotify.png)
 
 ## Présentation du projet
 

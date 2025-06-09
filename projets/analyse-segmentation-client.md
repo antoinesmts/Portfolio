@@ -5,7 +5,7 @@ image: ../images/projets/analyse-segmentation-client/RFM-Power-BI.png
 date: 2025-05-05
 categories: [Power BI]
 ---
-![Aperçu du tableau de bord](../images/projets/analyse-segmentation-client/RFM-Power-BI.png)
+![Aperçu du tableau de bord](../../images/projets/analyse-segmentation-client/RFM-Power-BI.png)
 
 ## Présentation du projet
 
