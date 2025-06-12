@@ -31,6 +31,7 @@ jobs:
     
     - name: Install dependencies
       run: |
+        npm config set registry https://npm.pkg.github.com
         npm install -g @11ty/eleventy
         npm install markdown-it markdown-it-front-matter fs-extra
     
