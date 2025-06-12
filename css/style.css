@@ -1040,18 +1040,11 @@ footer {
     }
 
     .hero .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        justify-content: center;
         text-align: center;
     }
     
     .hero .btn {
         text-align: center;
-        width: 100%;
-        max-width: 200px;
-        margin: 0 auto;
     }
     
     .about-content, .contact-content {
