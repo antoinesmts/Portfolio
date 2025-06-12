@@ -29,11 +29,18 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
     
-    - name: Install dependencies
+    - name: Install dependencies with fallback
       run: |
-        npm config set registry https://npm.pkg.github.com
-        npm install -g @11ty/eleventy
-        npm install markdown-it markdown-it-front-matter fs-extra
+        npm config set registry https://registry.npmjs.org
+        n=0
+        until [ "$n" -ge 2 ]
+        do
+          npm install -g @11ty/eleventy --no-audit --prefer-offline && break
+          n=$((n+1))
+          sleep 5
+          npm config set registry https://registry.npmmirror.com  # Fallback mirror
+        done
+        npm install markdown-it markdown-it-front-matter fs-extra --no-audit --prefer-offline
     
     - name: Build site
       run: |
