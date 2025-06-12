@@ -296,6 +296,9 @@ nav {
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -351,6 +354,9 @@ nav {
 
 .project-content {
     padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-title {
@@ -363,6 +369,11 @@ nav {
     color: var(--secondary-color);
     font-size: 0.9rem;
     margin-bottom: 15px;
+}
+
+.project-content a.btn {
+    margin-top: auto; 
+    align-self: flex-start;
 }
 
 /* About Section */
@@ -1030,6 +1041,15 @@ footer {
     
     .about-content, .contact-content {
         grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .project-content {
+        padding: 15px;
     }
 }
 
