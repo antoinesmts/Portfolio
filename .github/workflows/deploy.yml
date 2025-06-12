@@ -17,14 +17,22 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '18'
+    
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.npm
+          node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
     
     - name: Install dependencies
       run: |
         npm install -g @11ty/eleventy
-        npm install markdown-it
-        npm install markdown-it-front-matter
-        npm install fs-extra
+        npm install markdown-it markdown-it-front-matter fs-extra
     
     - name: Build site
       run: |
