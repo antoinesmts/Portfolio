@@ -1,5 +1,12 @@
 [
     {
+        "title": " Vibe coding d'un porfolio",
+        "description": "Création d'un portfolio mis à jour automatiquement via GitHub Actions, développé en collaboration avec l'IA Claude Sonnet 3.7 et l'IDE Trae.",
+        "image": "../images/projets/portfolio/portfolio-preview.png",
+        "categories": ["Développement Web", "IA", "Automatisation"],
+        "url": "projets/portfolio"
+    },
+    {
         "title": "Scraping et stockage d'avis Google",
         "description": "À l’aide de n8n, cette automatisation permet de récupérer les avis Google publiés pour plusieurs propriétés et les ajouter de façon régulière dans une base de données.",
         "image": "../images/projets/scraping-avis-google/Avis-Google-N8N.png",
