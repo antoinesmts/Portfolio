@@ -3,7 +3,7 @@ title: Vibe coding d'un porfolio
 description: Création d'un portfolio mis à jour automatiquement via GitHub Actions, développé en collaboration avec l'IA Claude Sonnet 3.7 et l'IDE Trae.
 image: ../images/projets/portfolio/portfolio-preview.png
 date: 2025-07-22
-categories: [Développement Web, IA, Automatisation]
+categories: [Vibe coding, IA]
 ---
 
 ![Aperçu du portfolio](../../images/projets/portfolio/portfolio-preview.png)
