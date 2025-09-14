@@ -6,7 +6,7 @@ excerpt: Tableau de bord Power BI permettant l'analyse de la segmentation client
 hero_image: ../images/projets/analyse-segmentation-client/RFM-Power-BI.png
 date: 2025-05-05
 status: published
-featured: false
+featured: true
 categories:
   - Power BI
 tags: []
