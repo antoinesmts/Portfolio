@@ -134,9 +134,6 @@
                         {{#if date}}
                         <div class="project-date">
                             <time datetime="{{date}}" itemprop="datePublished">{{formatDate date}}</time>
-                            {{#if duration}}
-                            <span class="duration"> • Durée: {{duration}}</span>
-                            {{/if}}
                         </div>
                         {{/if}}
 
@@ -160,16 +157,11 @@
                     </div>
                     {{/if}}
 
-                    {{#if (or github_url demo_url documentation_url)}}
+                    {{#if (or github_url documentation_url)}}
                     <div class="project-links">
                         {{#if github_url}}
                         <a href="{{github_url}}" target="_blank" rel="noopener noreferrer" class="btn secondary" itemprop="codeRepository">
                             <i class="fab fa-github" aria-hidden="true"></i> Code Source
-                        </a>
-                        {{/if}}
-                        {{#if demo_url}}
-                        <a href="{{demo_url}}" target="_blank" rel="noopener noreferrer" class="btn primary" itemprop="url">
-                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Démo Live
                         </a>
                         {{/if}}
                         {{#if documentation_url}}
@@ -204,9 +196,6 @@
                 <!-- Hidden structured data -->
                 <meta itemprop="author" content="Antoine Smeets">
                 <meta itemprop="dateModified" content="{{last_updated}}">
-                {{#if client}}
-                <meta itemprop="client" content="{{client}}">
-                {{/if}}
 
                 <nav class="project-navigation" aria-label="Navigation du projet">
                     <a href="../../#projets" class="btn secondary">

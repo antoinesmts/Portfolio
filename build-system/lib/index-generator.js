@@ -123,7 +123,6 @@ class IndexGenerator {
       last_updated: frontmatter.last_updated,
       status: frontmatter.status,
       featured: frontmatter.featured,
-      priority: frontmatter.priority,
 
       // Tags and tech
       tags: frontmatter.tags || [],
@@ -133,14 +132,8 @@ class IndexGenerator {
       seo_title: frontmatter.seo_title,
       seo_description: frontmatter.seo_description,
 
-      // Project details
-      duration: frontmatter.duration,
-      team_size: frontmatter.team_size,
-      client: frontmatter.client,
-
       // Links
       github_url: frontmatter.github_url,
-      demo_url: frontmatter.demo_url,
 
       // Metadata
       reading_time: stats.readingTime,
@@ -196,21 +189,11 @@ class IndexGenerator {
   }
 
   /**
-   * Sort projects by priority, featured status, and date
+   * Sort projects by date (newest first)
    */
   sortProjects() {
     this.projects.sort((a, b) => {
-      // Featured projects first
-      if (a.featured !== b.featured) {
-        return b.featured - a.featured;
-      }
-
-      // Then by priority (higher priority first)
-      if (a.priority !== b.priority) {
-        return b.priority - a.priority;
-      }
-
-      // Then by date (newer first)
+      // Sort by date (newer first)
       const dateA = new Date(a.date);
       const dateB = new Date(b.date);
       return dateB - dateA;

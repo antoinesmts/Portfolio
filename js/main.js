@@ -75,7 +75,8 @@ async function loadProjects() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const projects = await response.json();
+        const data = await response.json();
+        const projects = data.projects || data;
 
         if (!Array.isArray(projects)) {
             throw new Error('Format de données invalide');
@@ -83,7 +84,12 @@ async function loadProjects() {
 
         projectsContainer.innerHTML = '';
 
-        projects.forEach(project => {
+        // Trier par date (plus récent en premier)
+        const sortedProjects = projects
+            .filter(project => project.status === 'published')
+            .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        sortedProjects.forEach(project => {
             try {
                 const projectCard = createProjectCard(project);
                 projectsContainer.appendChild(projectCard);
@@ -204,7 +210,8 @@ function loadRelatedProjects() {
             }
             return response.json();
         })
-        .then(projects => {
+        .then(data => {
+            const projects = data.projects || data;
             // Filter projects that share at least one tag with current project
             const relatedProjects = projects.filter(project => {
                 return project.tags && project.tags.some(tag => currentTags.includes(tag));

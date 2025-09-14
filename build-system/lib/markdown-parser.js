@@ -10,7 +10,6 @@ const path = require('path');
 const matter = require('gray-matter');
 const markdownIt = require('markdown-it');
 const markdownItAttrs = require('markdown-it-attrs');
-const markdownItAnchor = require('markdown-it-anchor');
 const slugify = require('slugify');
 const { format } = require('date-fns');
 const { fr } = require('date-fns/locale');
@@ -27,24 +26,18 @@ class MarkdownParser {
       typographer: true,
       quotes: '""\'\'',
     })
-    .use(markdownItAttrs)
-    .use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.headerLink({
-        safariReaderFix: true,
-      })
-    });
+    .use(markdownItAttrs);
 
     // Schema for validation
     this.requiredFields = ['title', 'description', 'date'];
     this.optionalFields = [
       'slug', 'excerpt', 'hero_image', 'hero_alt', 'gallery', 'video_url',
-      'last_updated', 'status', 'featured', 'priority', 'categories', 'tags',
+      'last_updated', 'status', 'featured', 'categories', 'tags',
       'tech_stack', 'seo_title', 'seo_description', 'canonical_url', 'keywords',
       'og_title', 'og_description', 'og_image', 'og_type', 'twitter_card',
       'twitter_title', 'twitter_description', 'twitter_image', 'schema_type',
       'application_category', 'operating_system', 'programming_language',
-      'duration', 'team_size', 'client', 'role', 'github_url', 'demo_url',
-      'case_study', 'documentation_url', 'language', 'alternate_languages'
+      'role', 'github_url', 'documentation_url', 'language', 'alternate_languages'
     ];
   }
 

@@ -95,11 +95,7 @@ tech_stack: []
 # Format : Liste YAML
 # Exemples : ["Python", "FastAPI", "PostgreSQL"]
 
-priority: 1
-# Description : Ordre d'affichage (plus élevé = plus haut)
-# Format : Nombre entier
-# Défaut : 0
-# Utilisation : Tri des projets
+# CHAMP SUPPRIMÉ - priority: Le tri se fait maintenant automatiquement par date
 
 last_updated: 2025-01-15
 # Description : Date de dernière modification
@@ -107,35 +103,19 @@ last_updated: 2025-01-15
 # Utilisation : Métadonnées, tri
 
 # === MÉTADONNÉES PROJET ===
-
-duration: "2 semaines"
-# Description : Durée estimée du projet
-# Format : Texte libre
-# Exemples : "1 mois", "3 jours", "En cours"
-
-team_size: 1
-# Description : Taille de l'équipe
-# Format : Nombre entier
-# Exemple : 1 (solo), 3 (équipe)
-
-client: "Personnel"
-# Description : Type de client ou contexte
-# Exemples : "Personnel", "Freelance", "Entreprise X"
+# Les champs suivants ont été supprimés car non utilisés :
+# - duration: Durée du projet
+# - team_size: Taille de l'équipe
+# - client: Type de client
 
 github_url: "https://github.com/username/repo"
 # Description : Lien vers le repository GitHub
 # Format : URL complète ou null
 # Affichage : Bouton "Voir le code"
 
-demo_url: "https://demo.example.com"
-# Description : Lien vers une démo en ligne
-# Format : URL complète ou null
-# Affichage : Bouton "Voir la démo"
-
-case_study: true
-# Description : Indique si c'est une étude de cas détaillée
-# Valeurs : true/false
-# Utilisation : Affichage conditionnel de contenu
+# CHAMPS SUPPRIMÉS :
+# - demo_url: Lien vers une démo en ligne (non utilisé)
+# - case_study: Indicateur d'étude de cas (non utilisé)
 
 # === SEO ET MÉTADONNÉES ===
 

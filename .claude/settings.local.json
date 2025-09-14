@@ -6,7 +6,8 @@
       "Bash(git commit:*)",
       "Bash(npm install)",
       "Bash(npm run migrate:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(npm run clean:*)"
     ],
     "deny": [],
     "ask": []
