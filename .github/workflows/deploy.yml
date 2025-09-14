@@ -27,7 +27,7 @@ jobs:
     - name: Install build system dependencies
       run: |
         cd build-system
-        npm ci --only=production --no-audit
+        npm ci --omit=dev --no-audit
 
     - name: Validate projects
       run: |
