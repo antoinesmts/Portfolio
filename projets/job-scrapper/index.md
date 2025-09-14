@@ -10,7 +10,7 @@ excerpt: >-
 hero_image: ../images/projets/job-scrapper/job-scrapper-n8n.png
 date: 2025-07-23
 status: published
-featured: false
+featured: true
 categories:
   - Automatisation
   - n8n

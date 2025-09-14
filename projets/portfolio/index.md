@@ -10,7 +10,7 @@ excerpt: >-
 hero_image: ../images/projets/portfolio/portfolio-preview.png
 date: 2025-07-22
 status: published
-featured: false
+featured: true
 categories:
   - Vibe coding
   - IA

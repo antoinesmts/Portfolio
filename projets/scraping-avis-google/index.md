@@ -11,7 +11,7 @@ excerpt: >-
 hero_image: ../images/projets/scraping-avis-google/Avis-Google-N8N.png
 date: 2025-06-15
 status: published
-featured: false
+featured: true
 categories:
   - Automatisation
   - n8n
