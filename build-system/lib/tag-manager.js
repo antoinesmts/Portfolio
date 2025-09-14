@@ -46,12 +46,19 @@ class TagManager {
   }
 
   /**
-   * Extract all tags from project data
+   * Extract all tags from project data (only from featured projects)
    */
   extractTagsFromProjects(projectsData) {
-    console.log(chalk.blue('🏷️  Extracting tags from projects...'));
+    console.log(chalk.blue('🏷️  Extracting tags from featured projects...'));
 
-    projectsData.forEach(project => {
+    // Filter to only include featured projects
+    const featuredProjects = projectsData.filter(project =>
+      project.status === 'published' && project.featured === true
+    );
+
+    console.log(chalk.blue(`🔍 Processing ${featuredProjects.length} featured projects out of ${projectsData.length} total projects`));
+
+    featuredProjects.forEach(project => {
       // Process categories
       if (project.categories) {
         project.categories.forEach(category => {

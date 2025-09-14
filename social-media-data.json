@@ -99,6 +99,32 @@
       }
     },
     {
+      "slug": "scraping-avis-google",
+      "og": {
+        "title": "Scraping et stockage d'avis Google",
+        "description": "À l’aide de n8n, cette automatisation permet de récupérer les avis Google publiés pour plusieurs propriétés et les ajouter de façon régulière dans une base de données.",
+        "type": "article",
+        "url": "https://antoinesmeets.com/projets/scraping-avis-google",
+        "image": null,
+        "article": {
+          "published_time": "2025-06-15T00:00:00.000Z",
+          "modified_time": "2025-09-14",
+          "author": "Antoine Smeets",
+          "section": "Automatisation",
+          "tags": [
+            "Automatisation",
+            "n8n"
+          ]
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Scraping et stockage d'avis Google",
+        "description": "À l’aide de n8n, cette automatisation permet de récupérer les avis Google publiés pour plusieurs propriétés et les ajouter de façon régulière dans une base de données.",
+        "image": null
+      }
+    },
+    {
       "slug": "rfm-analysis",
       "og": {
         "title": "Analyse RFM - Segmentation client",

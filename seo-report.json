@@ -1,16 +1,16 @@
 {
-  "generated": "2025-09-14T21:26:57.156Z",
+  "generated": "2025-09-14T21:32:01.022Z",
   "summary": {
-    "totalProjects": 6,
-    "publishedProjects": 6,
-    "featuredProjects": 1,
+    "totalProjects": 7,
+    "publishedProjects": 7,
+    "featuredProjects": 2,
     "averageReadingTime": 2,
     "averageComplexity": 2
   },
   "seo": {
     "sitemap": {
       "generated": true,
-      "urls": 10,
+      "urls": 11,
       "lastUpdated": "2025-09-14"
     },
     "structuredData": {
@@ -30,12 +30,12 @@
   },
   "contentAnalysis": {
     "missingDescriptions": 0,
-    "missingImages": 6,
+    "missingImages": 7,
     "longTitles": 0,
     "shortDescriptions": 3,
     "categoriesDistribution": {
-      "Automatisation": 3,
-      "n8n": 2,
+      "Automatisation": 4,
+      "n8n": 3,
       "IA": 3,
       "No-code": 1,
       "SQL": 2,
@@ -55,14 +55,14 @@
     {
       "type": "images",
       "priority": "medium",
-      "count": 6,
-      "message": "6 projects are missing hero images"
+      "count": 7,
+      "message": "7 projects are missing hero images"
     },
     {
       "type": "github_links",
       "priority": "low",
-      "count": 6,
-      "message": "6 projects could benefit from GitHub links"
+      "count": 7,
+      "message": "7 projects could benefit from GitHub links"
     }
   ]
 }

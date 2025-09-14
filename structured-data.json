@@ -58,7 +58,7 @@
       "@type": "Person",
       "name": "Antoine Smeets"
     },
-    "numberOfItems": 6,
+    "numberOfItems": 7,
     "itemListElement": [
       {
         "@type": "ListItem",
@@ -84,25 +84,32 @@
       {
         "@type": "ListItem",
         "position": 4,
+        "url": "https://antoinesmeets.com/projets/scraping-avis-google",
+        "name": "Scraping et stockage d'avis Google",
+        "description": "À l’aide de n8n, cette automatisation permet de récupérer les avis Google publiés pour plusieurs propriétés et les ajouter de façon régulière dans une base de données."
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
         "url": "https://antoinesmeets.com/projets/rfm-analysis",
         "name": "Analyse RFM - Segmentation client",
         "description": "Segmentation client en SQL avec la méthode RFM (Récence, Fréquence, Montant) pour des stratégies marketing ciblées."
       },
       {
         "@type": "ListItem",
-        "position": 5,
+        "position": 6,
         "url": "https://antoinesmeets.com/projets/analyse-segmentation-client",
         "name": "Analyse de la segmentation client",
         "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client."
       },
       {
         "@type": "ListItem",
-        "position": 6,
+        "position": 7,
         "url": "https://antoinesmeets.com/projets/bbc-sounds-spotify",
         "name": "BBC Sounds to Spotify Playlist",
         "description": "Ce script Python permet de récupérer la playlist d’un programme BBC Sounds et de l’importer dans une playlist Spotify."
       }
     ]
   },
-  "generated": "2025-09-14T21:26:57.153Z"
+  "generated": "2025-09-14T21:32:01.020Z"
 }
