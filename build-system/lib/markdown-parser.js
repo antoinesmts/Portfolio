@@ -216,9 +216,18 @@ class MarkdownParser {
 
   // === Utility Methods ===
 
-  isValidDate(dateString) {
-    const regex = /^\d{4}-\d{2}-\d{2}$/;
-    return regex.test(dateString) && !isNaN(Date.parse(dateString));
+  isValidDate(date) {
+    // Handle both string and Date object formats
+    if (date instanceof Date) {
+      return !isNaN(date.getTime());
+    }
+
+    if (typeof date === 'string') {
+      const regex = /^\d{4}-\d{2}-\d{2}$/;
+      return regex.test(date) && !isNaN(Date.parse(date));
+    }
+
+    return false;
   }
 
   generateExcerpt(text, maxLength = 120) {

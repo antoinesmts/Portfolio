@@ -1033,4 +1033,54 @@ footer {
 }
 
 /* Auto-generated tag styles */
+.tag-automatisation {
+    background-color: #4a6cf7;
+    color: #ffffff;
+}
+
+.tag-ia {
+    background-color: #ff6b6b;
+    color: #ffffff;
+}
+
+.tag-no-code {
+    background-color: #51cf66;
+    color: #ffffff;
+}
+
+.tag-power-bi {
+    background-color: #f2c811;
+    color: #ffffff;
+}
+
+.tag-python {
+    background-color: #3776ab;
+    color: #ffffff;
+}
+
+.tag-sql {
+    background-color: #336791;
+    color: #ffffff;
+}
+
+.tag-template {
+    background-color: hsl(302, 62%, 47%);
+    color: #ffffff;
+}
+
+.tag-test {
+    background-color: hsl(26, 86%, 51%);
+    color: #ffffff;
+}
+
+.tag-vibe-coding {
+    background-color: #ff8787;
+    color: #ffffff;
+}
+
+.tag-n8n {
+    background-color: #8a2be2;
+    color: #ffffff;
+}
+
 

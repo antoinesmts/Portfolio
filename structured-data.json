@@ -58,8 +58,51 @@
       "@type": "Person",
       "name": "Antoine Smeets"
     },
-    "numberOfItems": 0,
-    "itemListElement": []
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://antoinesmeets.com/projets/job-scrapper",
+        "name": "Automatisation de la veille des offres d'emploi",
+        "description": "Automatisation de la collecte et du scoring des offres d'emploi via IA, intégrant n8n, scraping, bases SQL et une application no-code."
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://antoinesmeets.com/projets/portfolio",
+        "name": "Vibe coding d'un portfolio",
+        "description": "Création d'un portfolio mis à jour automatiquement via GitHub Actions, développé en collaboration avec l'IA Claude Sonnet 3.7 et l'IDE Trae."
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://antoinesmeets.com/projets/scraping-avis-google",
+        "name": "Scraping et stockage d'avis Google",
+        "description": "À l’aide de n8n, cette automatisation permet de récupérer les avis Google publiés pour plusieurs propriétés et les ajouter de façon régulière dans une base de données."
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "url": "https://antoinesmeets.com/projets/rfm-analysis",
+        "name": "Analyse RFM - Segmentation client",
+        "description": "Segmentation client en SQL avec la méthode RFM (Récence, Fréquence, Montant) pour des stratégies marketing ciblées."
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "url": "https://antoinesmeets.com/projets/analyse-segmentation-client",
+        "name": "Analyse de la segmentation client",
+        "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client."
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "url": "https://antoinesmeets.com/projets/bbc-sounds-spotify",
+        "name": "BBC Sounds to Spotify Playlist",
+        "description": "Ce script Python permet de récupérer la playlist d’un programme BBC Sounds et de l’importer dans une playlist Spotify."
+      }
+    ]
   },
-  "generated": "2025-09-14T20:34:52.069Z"
+  "generated": "2025-09-14T20:39:01.499Z"
 }

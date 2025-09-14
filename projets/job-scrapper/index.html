@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Automatisation de la veille des offres d&#x27;emploi - Antoine Smeets Portfolio</title>
+    <meta name="title" content="Automatisation de la veille des offres d&#x27;emploi - Antoine Smeets Portfolio">
+    <meta name="description" content="Automatisation de la collecte et du scoring des offres d&#x27;emploi via IA, intégrant n8n, scraping, bases SQL et une application no-code.">
+    <meta name="keywords" content="automatisation, n8n, ia, no-code, sql, antoine smeets, portfolio, développeur">
+    <meta name="author" content="Antoine Smeets">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://antoinesmeets.com/projets/job-scrapper">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://antoinesmeets.com/projets/job-scrapper">
+    <meta property="og:title" content="Automatisation de la veille des offres d&#x27;emploi">
+    <meta property="og:description" content="Automatisation de la collecte et du scoring des offres d&#x27;emploi via IA, intégrant n8n, scraping, bases SQL et une application no-code.">
+    <meta property="og:image" content="https://antoinesmeets.com/https://antoinesmeets.com/images/projets/job-scrapper/job-scrapper-n8n.png">
+    <meta property="og:image:alt" content="Aperçu du projet: Automatisation de la veille des offres d&#x27;emploi">
+    <meta property="og:site_name" content="Antoine Smeets Portfolio">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://antoinesmeets.com/projets/job-scrapper">
+    <meta property="twitter:title" content="Automatisation de la veille des offres d&#x27;emploi">
+    <meta property="twitter:description" content="Automatisation de la collecte et du scoring des offres d&#x27;emploi via IA, intégrant n8n, scraping, bases SQL et une application no-code.">
+    <meta property="twitter:image" content="https://antoinesmeets.com/https://antoinesmeets.com/images/projets/job-scrapper/job-scrapper-n8n.png">
+
+    <!-- Article Meta -->
+    <meta property="article:published_time" content="Tue Jul 22 2025 20:00:00 GMT-0400 (heure avancée de l’Est)T00:00:00Z">
+    <meta property="article:modified_time" content="2025-09-14T00:00:00Z">
+    <meta property="article:author" content="Antoine Smeets">
+    <meta property="article:section" content="Automatisation">
+    <meta property="article:section" content="n8n">
+    <meta property="article:section" content="IA">
+    <meta property="article:section" content="No-code">
+    <meta property="article:section" content="SQL">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/jpg" href="../../images/favicon.ico"/>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Automatisation de la veille des offres d&#x27;emploi",
+        "description": "Automatisation de la collecte et du scoring des offres d&#x27;emploi via IA, intégrant n8n, scraping, bases SQL et une application no-code.",
+        "url": "https://antoinesmeets.com/projets/job-scrapper",
+        "author": {
+            "@type": "Person",
+            "name": "Antoine Smeets",
+            "url": "https://antoinesmeets.com"
+        },
+        "datePublished": "Tue Jul 22 2025 20:00:00 GMT-0400 (heure avancée de l’Est)T00:00:00Z",
+        "dateModified": "2025-09-14T00:00:00Z",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://antoinesmeets.com/../images/projets/job-scrapper/job-scrapper-n8n.png",
+            "alt": "Aperçu du projet: Automatisation de la veille des offres d&#x27;emploi"
+        },
+        "applicationCategory": "",
+        "operatingSystem": "",
+        "keywords": ["automatisation", "n8n", "ia", "no-code", "sql", "antoine smeets", "portfolio", "développeur"],
+        "genre": ["Automatisation", "n8n", "IA", "No-code", "SQL"],
+        "inLanguage": "fr"
+    }
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="../../">Antoine Smeets</a></div>
+                <ul class="nav-links">
+                    <li><a href="../../">Accueil</a></li>
+                    <li><a href="../../#projets">Projets</a></li>
+                    <li><a href="../../#a-propos">À propos</a></li>
+                    <li><a href="../../#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-page">
+        <div class="container">
+            <article class="project-detail" itemscope itemtype="https://schema.org/SoftwareApplication">
+                <nav aria-label="Breadcrumb">
+                    <a href="../../#projets" class="back-link">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        <span>Retour aux projets</span>
+                    </a>
+                </nav>
+
+                <header class="project-header">
+                    <h1 itemprop="name">Automatisation de la veille des offres d&#x27;emploi</h1>
+
+                    <div class="project-meta">
+                        <div class="project-date">
+                            <time datetime="Tue Jul 22 2025 20:00:00 GMT-0400 (heure avancée de l’Est)" itemprop="datePublished">22 juillet 2025</time>
+                        </div>
+
+                        <div class="project-categories" role="list" aria-label="Catégories du projet">
+                            <span class="project-category-tag" role="listitem" itemprop="genre">Automatisation</span>
+                            <span class="project-category-tag" role="listitem" itemprop="genre">n8n</span>
+                            <span class="project-category-tag" role="listitem" itemprop="genre">IA</span>
+                            <span class="project-category-tag" role="listitem" itemprop="genre">No-code</span>
+                            <span class="project-category-tag" role="listitem" itemprop="genre">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="project-tags" role="list" aria-label="Technologies utilisées">
+                    </div>
+
+                </header>
+
+                <div class="project-featured-image">
+                    <img src="../../../images/projets/job-scrapper/job-scrapper-n8n.png" alt="Aperçu du projet: Automatisation de la veille des offres d&#x27;emploi" itemprop="image" loading="lazy">
+                </div>
+
+                <div class="project-content" itemprop="description">
+                    <p><img src="../../images/projets/job-scrapper/job-scrapper-n8n.png" alt="Aperçu de l'automatisation"></p>
+<h2 id="pr%C3%A9sentation-du-projet" tabindex="-1"><a class="header-anchor" href="#pr%C3%A9sentation-du-projet"><span>Présentation du projet</span></a></h2>
+<p>L’objectif de ce projet est d’automatiser une veille personnalisée des offres d’emploi, enrichie d’analyses IA. Chaque offre est résumée sur les outils demandés, les tâches principales, le salaire éventuel et les avantages sociaux. Une intelligence artificielle attribue également un score de pertinence de 0 à 100 en fonction de mon profil et de mes critères de recherche.</p>
+<h2 id="stack-technique-et-fonctionnement" tabindex="-1"><a class="header-anchor" href="#stack-technique-et-fonctionnement"><span>Stack technique et fonctionnement</span></a></h2>
+<h3 id="premi%C3%A8re-version" tabindex="-1"><a class="header-anchor" href="#premi%C3%A8re-version"><span>Première version</span></a></h3>
+<ul>
+<li><strong>n8n</strong> : Automatisation des appels API, nettoyage et préparation des données par IA</li>
+<li><strong>API APIFY (Google Jobs)</strong> : Scraping des offres selon critères prédéfinis</li>
+<li><strong>Notion</strong> : Interface simple pour gérer les mots-clés de recherche et leur activation</li>
+<li><strong>Supabase</strong> : Base SQL pour stocker et historiser les offres collectées</li>
+<li><strong>OpenAI GPT4.1-mini via Openrouter</strong> : Traitement IA pour résumé et scoring</li>
+<li><strong>KChat (Slack d’Infomaniak)</strong> : Envoi quotidien de résumés des offres pertinentes avec score</li>
+<li><strong>Flutterflow</strong> : Application no-code affichant les offres d’eemploi et les détails pertinents</li>
+</ul>
+<h3 id="seconde-version" tabindex="-1"><a class="header-anchor" href="#seconde-version"><span>Seconde version</span></a></h3>
+<p>Suite à l’arrêt de l’API APIFY, le scraping a été repris via un script Python utilisant la <a href="https://github.com/speedyapply/JobSpy">bibliothèque JobSpy</a>, capable de collecter des offres sur LinkedIn, Indeed et autres plateformes.</p>
+<p>Ce script a été transformé en API grâce à l’IA (modèle DEVSTRAL de Mistral) via Flask, et packagé en image Docker automatisée via GitHub Actions <a href="https://github.com/antoinesmts/Jobs-scrapper">(Voir le projet sur Github)</a>.</p>
+<p>Quelques ajustements ont été nécessaires dans n8n pour intégrer ce nouveau flux et retrouver une veille opérationnelle.</p>
+<p><img src="../../images/projets/job-scrapper/job-scrapper-app.png" alt="Aperçu de l'application Flutterflow"></p>
+<h2 id="am%C3%A9liorations-possibles" tabindex="-1"><a class="header-anchor" href="#am%C3%A9liorations-possibles"><span>Améliorations possibles</span></a></h2>
+<ul>
+<li>Raffiner le prompt IA pour un scoring encore plus précis et pertinent</li>
+<li>Ajouter des filtres dynamiques dans l’application Flutterflow pour affiner les recherches</li>
+<li>Étendre les sources de scraping à d’autres plateformes</li>
+<li>Intégration d’alertes personnalisées basées sur le score</li>
+</ul>
+
+                </div>
+
+                <div class="project-stats">
+                    <small class="reading-time">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        Temps de lecture: 2 min
+                         • 292 mots
+                    </small>
+                </div>
+
+                <!-- Hidden structured data -->
+                <meta itemprop="author" content="Antoine Smeets">
+                <meta itemprop="dateModified" content="2025-09-14">
+                <meta itemprop="client" content="Personnel">
+
+                <nav class="project-navigation" aria-label="Navigation du projet">
+                    <a href="../../#projets" class="btn secondary">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        <span>Retour aux projets</span>
+                    </a>
+                </nav>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Antoine Smeets</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+
+    <!-- Analytics and performance monitoring could go here -->
+</body>
+</html>

@@ -1,16 +1,16 @@
 {
-  "generated": "2025-09-14T20:34:52.070Z",
+  "generated": "2025-09-14T20:39:01.501Z",
   "summary": {
-    "totalProjects": 0,
-    "publishedProjects": 0,
+    "totalProjects": 7,
+    "publishedProjects": 6,
     "featuredProjects": 0,
-    "averageReadingTime": 0,
-    "averageComplexity": 0
+    "averageReadingTime": 3,
+    "averageComplexity": 2
   },
   "seo": {
     "sitemap": {
       "generated": true,
-      "urls": 4,
+      "urls": 10,
       "lastUpdated": "2025-09-14"
     },
     "structuredData": {
@@ -30,11 +30,39 @@
   },
   "contentAnalysis": {
     "missingDescriptions": 0,
-    "missingImages": 0,
+    "missingImages": 6,
     "longTitles": 0,
-    "shortDescriptions": 0,
-    "categoriesDistribution": {},
+    "shortDescriptions": 3,
+    "categoriesDistribution": {
+      "Automatisation": 3,
+      "n8n": 2,
+      "IA": 3,
+      "No-code": 1,
+      "SQL": 2,
+      "Vibe coding": 1,
+      "Power BI": 1,
+      "Python": 1
+    },
     "tagsUsage": {}
   },
-  "recommendations": []
+  "recommendations": [
+    {
+      "type": "meta_description",
+      "priority": "high",
+      "count": 3,
+      "message": "3 projects need better meta descriptions (120-160 characters)"
+    },
+    {
+      "type": "images",
+      "priority": "medium",
+      "count": 6,
+      "message": "6 projects are missing hero images"
+    },
+    {
+      "type": "github_links",
+      "priority": "low",
+      "count": 6,
+      "message": "6 projects could benefit from GitHub links"
+    }
+  ]
 }
