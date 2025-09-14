@@ -84,9 +84,9 @@ async function loadProjects() {
 
         projectsContainer.innerHTML = '';
 
-        // Trier par date (plus récent en premier)
+        // Filtrer par featured: true et trier par date (plus récent en premier)
         const sortedProjects = projects
-            .filter(project => project.status === 'published')
+            .filter(project => project.status === 'published' && project.featured === true)
             .sort((a, b) => new Date(b.date) - new Date(a.date));
 
         sortedProjects.forEach(project => {

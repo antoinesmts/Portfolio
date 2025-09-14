@@ -26,8 +26,6 @@ demo_url: null
 case_study: true
 ---
 
-![Aperçu du code SQL RFM](../../images/projets/rfm-analysis/SQL-RFM.png)
-
 ## Présentation du projet
 Ce projet implémente une segmentation client en utilisant la méthodologie RFM (Récence, Fréquence, Montant) directement en SQL sous Snowflake. 
 

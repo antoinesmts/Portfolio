@@ -26,9 +26,6 @@ github_url: null
 demo_url: null
 case_study: true
 ---
-
-![Aperçu du portfolio](../../images/projets/portfolio/portfolio-preview.png)
-
 ## Présentation du projet
 
 Vibe codé un portfolio en HTML, CSS et Javascript visant à minimiser la maintenance tout en offrant une mise à jour automatique de la section projets à l'aide de fichiers en markdown et Github. 

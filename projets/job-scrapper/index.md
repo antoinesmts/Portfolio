@@ -29,9 +29,6 @@ github_url: null
 demo_url: null
 case_study: true
 ---
-
-![Aperçu de l'automatisation](../../images/projets/job-scrapper/job-scrapper-n8n.png)
-
 ## Présentation du projet
 
 L'objectif de ce projet est d'automatiser une veille personnalisée des offres d'emploi, enrichie d'analyses IA. Chaque offre est résumée sur les outils demandés, les tâches principales, le salaire éventuel et les avantages sociaux. Une intelligence artificielle attribue également un score de pertinence de 0 à 100 en fonction de mon profil et de mes critères de recherche.

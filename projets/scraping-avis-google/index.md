@@ -27,7 +27,6 @@ github_url: null
 demo_url: null
 case_study: true
 ---
-![Vue gloable de l'automatisation n8n](../../images/projets/scraping-avis-google/Avis-Google-N8N.png)
 
 ## Objectif
 

@@ -27,7 +27,6 @@ github_url: null
 demo_url: null
 case_study: true
 ---
-![Aperçu du code](../../images/projets/bbc-sounds-spotify/BBC-to-Spotify.png)
 
 ## Présentation du projet
 

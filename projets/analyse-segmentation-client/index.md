@@ -21,7 +21,6 @@ github_url: null
 demo_url: null
 case_study: true
 ---
-![Aperçu du tableau de bord](../../images/projets/analyse-segmentation-client/RFM-Power-BI.png)
 
 ## Présentation du projet
 
