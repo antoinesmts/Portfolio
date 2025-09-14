@@ -25,7 +25,7 @@ class MarkdownParser {
       html: true,
       linkify: true,
       typographer: true,
-      quotes: '""''',
+      quotes: '""\'\'',
     })
     .use(markdownItAttrs)
     .use(markdownItAnchor, {

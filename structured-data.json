@@ -1,0 +1,65 @@
+{
+  "person": {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Antoine Smeets",
+    "url": "https://antoinesmeets.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/antoinesmeets/",
+      "https://github.com/antoinesmts"
+    ],
+    "jobTitle": "Développeur spécialisé en valorisation de données",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "knowsAbout": [
+      "Automatisation",
+      "Analyse de données",
+      "Python",
+      "SQL",
+      "Power BI",
+      "n8n",
+      "Intelligence Artificielle"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebSite",
+      "@id": "https://antoinesmeets.com"
+    }
+  },
+  "website": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://antoinesmeets.com",
+    "url": "https://antoinesmeets.com",
+    "name": "Antoine Smeets - Portfolio",
+    "description": "Portfolio d'Antoine Smeets - Développeur spécialisé en valorisation de données, automatisation et solutions no-code",
+    "author": {
+      "@type": "Person",
+      "name": "Antoine Smeets"
+    },
+    "inLanguage": "fr",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://antoinesmeets.com/#projets?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  },
+  "portfolio": {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Portfolio Projects - Antoine Smeets",
+    "description": "Collection of development projects by Antoine Smeets",
+    "url": "https://antoinesmeets.com/#projets",
+    "author": {
+      "@type": "Person",
+      "name": "Antoine Smeets"
+    },
+    "numberOfItems": 0,
+    "itemListElement": []
+  },
+  "generated": "2025-09-14T20:30:24.790Z"
+}

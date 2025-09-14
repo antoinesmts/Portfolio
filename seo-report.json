@@ -1,0 +1,40 @@
+{
+  "generated": "2025-09-14T20:30:24.792Z",
+  "summary": {
+    "totalProjects": 0,
+    "publishedProjects": 0,
+    "featuredProjects": 0,
+    "averageReadingTime": 0,
+    "averageComplexity": 0
+  },
+  "seo": {
+    "sitemap": {
+      "generated": true,
+      "urls": 4,
+      "lastUpdated": "2025-09-14"
+    },
+    "structuredData": {
+      "implemented": true,
+      "schemas": [
+        "Person",
+        "WebSite",
+        "ItemList",
+        "CreativeWork/SoftwareApplication"
+      ]
+    },
+    "socialMedia": {
+      "openGraph": true,
+      "twitterCards": true,
+      "linkedInOptimized": true
+    }
+  },
+  "contentAnalysis": {
+    "missingDescriptions": 0,
+    "missingImages": 0,
+    "longTitles": 0,
+    "shortDescriptions": 0,
+    "categoriesDistribution": {},
+    "tagsUsage": {}
+  },
+  "recommendations": []
+}

@@ -1,0 +1,20 @@
+{
+  "mainSite": {
+    "og": {
+      "title": "Antoine Smeets - Portfolio",
+      "description": "Portfolio d'Antoine Smeets - Développeur spécialisé en valorisation de données, automatisation et solutions no-code",
+      "type": "website",
+      "url": "https://antoinesmeets.com",
+      "image": "https://antoinesmeets.com/images/og-default.png",
+      "locale": "fr_FR"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@antoinesmts",
+      "title": "Antoine Smeets - Portfolio",
+      "description": "Portfolio d'Antoine Smeets - Développeur spécialisé en valorisation de données, automatisation et solutions no-code",
+      "image": "https://antoinesmeets.com/images/twitter-default.png"
+    }
+  },
+  "projects": []
+}

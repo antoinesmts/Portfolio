@@ -25,7 +25,7 @@ const slugify = require('slugify');
 
 class ProjectMigrator {
   constructor() {
-    this.projectsDir = path.join(__dirname, '../../projets');
+    this.projectsDir = path.resolve(__dirname, '../../projets');
     this.backupDir = path.join(__dirname, '../../backup');
     this.existingIndex = null;
     this.migratedProjects = [];
@@ -86,23 +86,34 @@ class ProjectMigrator {
   async loadExistingIndex() {
     const indexPath = path.join(this.projectsDir, 'index.json');
     if (await fs.pathExists(indexPath)) {
-      this.existingIndex = await fs.readJson(indexPath);
+      const indexData = await fs.readJson(indexPath);
+      // Handle both array format and object format
+      this.existingIndex = Array.isArray(indexData) ? indexData : (indexData.projects || []);
       console.log(chalk.blue(`📋 Loaded ${this.existingIndex.length} projects from existing index`));
+    } else {
+      this.existingIndex = [];
     }
   }
 
   async findProjectFiles() {
-    const pattern = path.join(this.projectsDir, '*.md');
-    const files = glob.sync(pattern);
+    try {
+      const files = await fs.readdir(this.projectsDir);
+      const mdFiles = files
+        .filter(file => file.endsWith('.md'))
+        .map(file => path.join(this.projectsDir, file));
 
-    // Exclude template and non-project files
-    const projectFiles = files.filter(file => {
-      const basename = path.basename(file, '.md');
-      return !['template', 'README', 'index'].includes(basename);
-    });
+      // Exclude template and non-project files
+      const projectFiles = mdFiles.filter(file => {
+        const basename = path.basename(file, '.md');
+        return !['template', 'README', 'index'].includes(basename);
+      });
 
-    console.log(chalk.blue(`🔍 Found ${projectFiles.length} project files to migrate`));
-    return projectFiles;
+      console.log(chalk.blue(`🔍 Found ${projectFiles.length} project files to migrate`));
+      return projectFiles;
+    } catch (error) {
+      console.error(chalk.red(`Error reading projects directory: ${error.message}`));
+      return [];
+    }
   }
 
   async migrateProject(filePath) {

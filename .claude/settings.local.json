@@ -3,7 +3,10 @@
     "allow": [
       "Bash(node:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npm install)",
+      "Bash(npm run migrate:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

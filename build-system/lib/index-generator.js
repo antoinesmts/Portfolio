@@ -72,7 +72,7 @@ class IndexGenerator {
    * Find all project folders (containing index.md)
    */
   async findProjectFolders() {
-    const pattern = path.join(this.projectsDir, '*', 'index.md');
+    const pattern = path.join(this.projectsDir, '*', 'index.md').replace(/\\/g, '/');
     const indexFiles = glob.sync(pattern);
 
     return indexFiles.map(file => path.dirname(file));

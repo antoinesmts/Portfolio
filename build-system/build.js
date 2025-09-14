@@ -95,7 +95,9 @@ class PortfolioBuildSystem {
       this.printSummary();
     } catch (error) {
       spinner.fail(chalk.red('❌ Build failed'));
-      console.error(chalk.red(error.message));
+      console.error(chalk.red('Error message:', error.message));
+      console.error(chalk.red('Error stack:', error.stack));
+      console.error(chalk.red('Full error object:', error));
 
       if (this.options.verbose || process.env.CI) {
         console.error(chalk.red('Stack trace:'));
