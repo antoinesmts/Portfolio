@@ -1,6 +1,7 @@
 # Dossiers générés
 _site/
 node_modules/
+.claude
 
 # Fichiers de dépendances
 package-lock.json
