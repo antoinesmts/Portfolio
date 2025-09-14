@@ -4,6 +4,7 @@ node_modules/
 
 # Fichiers de dépendances
 package-lock.json
+!build-system/package-lock.json
 yarn.lock
 
 # Fichiers d'environnement
