@@ -1,0 +1,179 @@
+{
+  "mainSite": {
+    "og": {
+      "title": "Antoine Smeets - Portfolio",
+      "description": "Portfolio d'Antoine Smeets - Développeur spécialisé en valorisation de données, automatisation et solutions no-code",
+      "type": "website",
+      "url": "https://antoinesmeets.com",
+      "image": "https://antoinesmeets.com/images/og-default.png",
+      "locale": "fr_FR"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "site": "@antoinesmts",
+      "title": "Antoine Smeets - Portfolio",
+      "description": "Portfolio d'Antoine Smeets - Développeur spécialisé en valorisation de données, automatisation et solutions no-code",
+      "image": "https://antoinesmeets.com/images/twitter-default.png"
+    }
+  },
+  "projects": [
+    {
+      "slug": "job-scrapper",
+      "og": {
+        "title": "Automatisation de la veille des offres d'emploi",
+        "description": "Automatisation de la collecte et du scoring des offres d'emploi via IA, intégrant n8n, scraping, bases SQL et une application no-code.",
+        "type": "article",
+        "url": "https://antoinesmeets.com/projets/job-scrapper",
+        "image": null,
+        "article": {
+          "published_time": "2025-07-23T00:00:00.000Z",
+          "modified_time": "2025-09-14",
+          "author": "Antoine Smeets",
+          "section": "Automatisation",
+          "tags": [
+            "Automatisation",
+            "n8n",
+            "IA",
+            "No-code",
+            "SQL"
+          ]
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Automatisation de la veille des offres d'emploi",
+        "description": "Automatisation de la collecte et du scoring des offres d'emploi via IA, intégrant n8n, scraping, bases SQL et une application no-code.",
+        "image": null
+      }
+    },
+    {
+      "slug": "portfolio",
+      "og": {
+        "title": "Vibe coding d'un portfolio",
+        "description": "Création d'un portfolio mis à jour automatiquement via GitHub Actions, développé en collaboration avec l'IA Claude Sonnet 3.7 et l'IDE Trae.",
+        "type": "article",
+        "url": "https://antoinesmeets.com/projets/portfolio",
+        "image": null,
+        "article": {
+          "published_time": "2025-07-22T00:00:00.000Z",
+          "modified_time": "2025-09-14",
+          "author": "Antoine Smeets",
+          "section": "Vibe coding",
+          "tags": [
+            "Vibe coding",
+            "IA"
+          ]
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Vibe coding d'un portfolio",
+        "description": "Création d'un portfolio mis à jour automatiquement via GitHub Actions, développé en collaboration avec l'IA Claude Sonnet 3.7 et l'IDE Trae.",
+        "image": null
+      }
+    },
+    {
+      "slug": "scraping-avis-google",
+      "og": {
+        "title": "Scraping et stockage d'avis Google",
+        "description": "À l’aide de n8n, cette automatisation permet de récupérer les avis Google publiés pour plusieurs propriétés et les ajouter de façon régulière dans une base de données.",
+        "type": "article",
+        "url": "https://antoinesmeets.com/projets/scraping-avis-google",
+        "image": null,
+        "article": {
+          "published_time": "2025-06-15T00:00:00.000Z",
+          "modified_time": "2025-09-14",
+          "author": "Antoine Smeets",
+          "section": "Automatisation",
+          "tags": [
+            "Automatisation",
+            "n8n"
+          ]
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Scraping et stockage d'avis Google",
+        "description": "À l’aide de n8n, cette automatisation permet de récupérer les avis Google publiés pour plusieurs propriétés et les ajouter de façon régulière dans une base de données.",
+        "image": null
+      }
+    },
+    {
+      "slug": "rfm-analysis",
+      "og": {
+        "title": "Analyse RFM - Segmentation client",
+        "description": "Segmentation client en SQL avec la méthode RFM (Récence, Fréquence, Montant) pour des stratégies marketing ciblées.",
+        "type": "article",
+        "url": "https://antoinesmeets.com/projets/rfm-analysis",
+        "image": null,
+        "article": {
+          "published_time": "2025-05-06T00:00:00.000Z",
+          "modified_time": "2025-09-14",
+          "author": "Antoine Smeets",
+          "section": "SQL",
+          "tags": [
+            "SQL"
+          ]
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Analyse RFM - Segmentation client",
+        "description": "Segmentation client en SQL avec la méthode RFM (Récence, Fréquence, Montant) pour des stratégies marketing ciblées.",
+        "image": null
+      }
+    },
+    {
+      "slug": "analyse-segmentation-client",
+      "og": {
+        "title": "Analyse de la segmentation client",
+        "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
+        "type": "article",
+        "url": "https://antoinesmeets.com/projets/analyse-segmentation-client",
+        "image": null,
+        "article": {
+          "published_time": "2025-05-05T00:00:00.000Z",
+          "modified_time": "2025-09-14",
+          "author": "Antoine Smeets",
+          "section": "Power BI",
+          "tags": [
+            "Power BI"
+          ]
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Analyse de la segmentation client",
+        "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
+        "image": null
+      }
+    },
+    {
+      "slug": "bbc-sounds-spotify",
+      "og": {
+        "title": "BBC Sounds to Spotify Playlist",
+        "description": "Ce script Python permet de récupérer la playlist d’un programme BBC Sounds et de l’importer dans une playlist Spotify.",
+        "type": "article",
+        "url": "https://antoinesmeets.com/projets/bbc-sounds-spotify",
+        "image": null,
+        "article": {
+          "published_time": "2025-05-02T00:00:00.000Z",
+          "modified_time": "2025-09-14",
+          "author": "Antoine Smeets",
+          "section": "Automatisation",
+          "tags": [
+            "Automatisation",
+            "Python",
+            "IA"
+          ]
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "BBC Sounds to Spotify Playlist",
+        "description": "Ce script Python permet de récupérer la playlist d’un programme BBC Sounds et de l’importer dans une playlist Spotify.",
+        "image": null
+      }
+    }
+  ]
+}

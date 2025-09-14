@@ -1,0 +1,64 @@
+[
+  {
+    "title": "Automatisation de la veille des offres d'emploi",
+    "description": "Automatisation de la collecte et du scoring des offres d'emploi via IA, intégrant n8n, scraping, bases SQL et une application no-code.",
+    "image": "../images/projets/job-scrapper/job-scrapper-n8n.png",
+    "categories": [
+      "Automatisation",
+      "n8n",
+      "IA",
+      "No-code",
+      "SQL"
+    ],
+    "url": "job-scrapper"
+  },
+  {
+    "title": "Vibe coding d'un portfolio",
+    "description": "Création d'un portfolio mis à jour automatiquement via GitHub Actions, développé en collaboration avec l'IA Claude Sonnet 3.7 et l'IDE Trae.",
+    "image": "../images/projets/portfolio/portfolio-preview.png",
+    "categories": [
+      "Vibe coding",
+      "IA"
+    ],
+    "url": "portfolio"
+  },
+  {
+    "title": "Scraping et stockage d'avis Google",
+    "description": "À l’aide de n8n, cette automatisation permet de récupérer les avis Google publiés pour plusieurs propriétés et les ajouter de façon régulière dans une base de données.",
+    "image": "../images/projets/scraping-avis-google/Avis-Google-N8N.png",
+    "categories": [
+      "Automatisation",
+      "n8n"
+    ],
+    "url": "scraping-avis-google"
+  },
+  {
+    "title": "Analyse RFM - Segmentation client",
+    "description": "Segmentation client en SQL avec la méthode RFM (Récence, Fréquence, Montant) pour des stratégies marketing ciblées.",
+    "image": "../images/projets/rfm-analysis/SQL-RFM.png",
+    "categories": [
+      "SQL"
+    ],
+    "url": "rfm-analysis"
+  },
+  {
+    "title": "Analyse de la segmentation client",
+    "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
+    "image": "../images/projets/analyse-segmentation-client/RFM-Power-BI.png",
+    "categories": [
+      "Power BI"
+    ],
+    "url": "analyse-segmentation-client"
+  },
+  {
+    "title": "BBC Sounds to Spotify Playlist",
+    "description": "Ce script Python permet de récupérer la playlist d’un programme BBC Sounds et de l’importer dans une playlist Spotify.",
+    "image": "../images/projets/bbc-sounds-spotify/BBC-to-Spotify.png",
+    "categories": [
+      "Automatisation",
+      "Python",
+      "IA"
+    ],
+    "url": "bbc-sounds-spotify"
+  }
+]
