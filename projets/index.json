@@ -1,6 +1,36 @@
 {
   "projects": [
     {
+      "title": "Analyse de la segmentation client",
+      "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
+      "image": "../images/projets/analyse-segmentation-client/RFM-Power-BI.png",
+      "categories": [
+        "Power BI"
+      ],
+      "url": "analyse-segmentation-client",
+      "slug": "analyse-segmentation-client",
+      "excerpt": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
+      "date": "2025-05-05T00:00:00.000Z",
+      "last_updated": "2025-09-14",
+      "status": "published",
+      "featured": true,
+      "priority": 5,
+      "tags": [],
+      "tech_stack": [],
+      "seo_title": "Analyse de la segmentation client",
+      "seo_description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
+      "duration": null,
+      "team_size": 1,
+      "client": "Personnel",
+      "github_url": null,
+      "demo_url": null,
+      "reading_time": 2,
+      "word_count": 251,
+      "complexity": 2,
+      "generated_at": "2025-09-14T20:46:31.697Z",
+      "schema_type": "CreativeWork"
+    },
+    {
       "title": "Automatisation de la veille des offres d'emploi",
       "description": "Automatisation de la collecte et du scoring des offres d'emploi via IA, intégrant n8n, scraping, bases SQL et une application no-code.",
       "image": "../images/projets/job-scrapper/job-scrapper-n8n.png",
@@ -31,7 +61,7 @@
       "reading_time": 2,
       "word_count": 292,
       "complexity": 3,
-      "generated_at": "2025-09-14T20:39:01.413Z",
+      "generated_at": "2025-09-14T20:46:31.692Z",
       "schema_type": "SoftwareApplication"
     },
     {
@@ -62,7 +92,7 @@
       "reading_time": 3,
       "word_count": 468,
       "complexity": 2,
-      "generated_at": "2025-09-14T20:39:01.410Z",
+      "generated_at": "2025-09-14T20:46:31.685Z",
       "schema_type": "SoftwareApplication"
     },
     {
@@ -93,7 +123,7 @@
       "reading_time": 4,
       "word_count": 605,
       "complexity": 2,
-      "generated_at": "2025-09-14T20:39:01.397Z",
+      "generated_at": "2025-09-14T20:46:31.665Z",
       "schema_type": "SoftwareApplication"
     },
     {
@@ -123,38 +153,8 @@
       "reading_time": 2,
       "word_count": 320,
       "complexity": 2,
-      "generated_at": "2025-09-14T20:39:01.400Z",
+      "generated_at": "2025-09-14T20:46:31.671Z",
       "schema_type": "Dataset"
-    },
-    {
-      "title": "Analyse de la segmentation client",
-      "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
-      "image": "../images/projets/analyse-segmentation-client/RFM-Power-BI.png",
-      "categories": [
-        "Power BI"
-      ],
-      "url": "analyse-segmentation-client",
-      "slug": "analyse-segmentation-client",
-      "excerpt": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
-      "date": "2025-05-05T00:00:00.000Z",
-      "last_updated": "2025-09-14",
-      "status": "published",
-      "featured": false,
-      "priority": 5,
-      "tags": [],
-      "tech_stack": [],
-      "seo_title": "Analyse de la segmentation client",
-      "seo_description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
-      "duration": null,
-      "team_size": 1,
-      "client": "Personnel",
-      "github_url": null,
-      "demo_url": null,
-      "reading_time": 2,
-      "word_count": 251,
-      "complexity": 2,
-      "generated_at": "2025-09-14T20:39:01.416Z",
-      "schema_type": "CreativeWork"
     },
     {
       "title": "BBC Sounds to Spotify Playlist",
@@ -185,46 +185,15 @@
       "reading_time": 2,
       "word_count": 233,
       "complexity": 2,
-      "generated_at": "2025-09-14T20:39:01.415Z",
+      "generated_at": "2025-09-14T20:46:31.695Z",
       "schema_type": "SoftwareApplication"
-    },
-    {
-      "title": "Test Template Project",
-      "description": "Un projet de test pour valider le template et vérifier que tous les champs fonctionnent correctement avec le système de build automatisé.",
-      "image": "../images/projets/portfolio/portfolio-preview.png",
-      "categories": [
-        "Test",
-        "Template"
-      ],
-      "url": "test-template",
-      "slug": "test-template",
-      "excerpt": "Un projet de test pour valider le template et vérifier que tous les champs fonctionnent correctement...",
-      "date": "2025-01-15T00:00:00.000Z",
-      "last_updated": "2025-09-14",
-      "status": "draft",
-      "featured": false,
-      "priority": 5,
-      "tags": [],
-      "tech_stack": [],
-      "seo_title": "Test Template Project",
-      "seo_description": "Un projet de test pour valider le template et vérifier que tous les champs fonctionnent correctement avec le système de build automatisé.",
-      "duration": "1 jour",
-      "team_size": 1,
-      "client": "Personnel",
-      "github_url": null,
-      "demo_url": null,
-      "reading_time": 1,
-      "word_count": 75,
-      "complexity": 2,
-      "generated_at": "2025-09-14T20:39:01.390Z",
-      "schema_type": "CreativeWork"
     }
   ],
   "metadata": {
-    "generated_at": "2025-09-14T20:39:01.416Z",
-    "total_projects": 7,
+    "generated_at": "2025-09-14T20:46:31.698Z",
+    "total_projects": 6,
     "published_projects": 6,
-    "featured_projects": 0,
+    "featured_projects": 1,
     "build_version": "1.0.0",
     "available_categories": [
       "Automatisation",
@@ -233,16 +202,14 @@
       "Power BI",
       "Python",
       "SQL",
-      "Template",
-      "Test",
       "Vibe coding",
       "n8n"
     ],
     "available_tags": [],
     "available_tech_stack": [],
-    "average_reading_time": 2,
+    "average_reading_time": 3,
     "complexity_distribution": {
-      "2": 6,
+      "2": 5,
       "3": 1
     }
   }

@@ -18,6 +18,31 @@
   },
   "projects": [
     {
+      "slug": "analyse-segmentation-client",
+      "og": {
+        "title": "Analyse de la segmentation client",
+        "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
+        "type": "article",
+        "url": "https://antoinesmeets.com/projets/analyse-segmentation-client",
+        "image": null,
+        "article": {
+          "published_time": "2025-05-05T00:00:00.000Z",
+          "modified_time": "2025-09-14",
+          "author": "Antoine Smeets",
+          "section": "Power BI",
+          "tags": [
+            "Power BI"
+          ]
+        }
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Analyse de la segmentation client",
+        "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
+        "image": null
+      }
+    },
+    {
       "slug": "job-scrapper",
       "og": {
         "title": "Automatisation de la veille des offres d'emploi",
@@ -120,31 +145,6 @@
         "card": "summary_large_image",
         "title": "Analyse RFM - Segmentation client",
         "description": "Segmentation client en SQL avec la méthode RFM (Récence, Fréquence, Montant) pour des stratégies marketing ciblées.",
-        "image": null
-      }
-    },
-    {
-      "slug": "analyse-segmentation-client",
-      "og": {
-        "title": "Analyse de la segmentation client",
-        "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
-        "type": "article",
-        "url": "https://antoinesmeets.com/projets/analyse-segmentation-client",
-        "image": null,
-        "article": {
-          "published_time": "2025-05-05T00:00:00.000Z",
-          "modified_time": "2025-09-14",
-          "author": "Antoine Smeets",
-          "section": "Power BI",
-          "tags": [
-            "Power BI"
-          ]
-        }
-      },
-      "twitter": {
-        "card": "summary_large_image",
-        "title": "Analyse de la segmentation client",
-        "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
         "image": null
       }
     },

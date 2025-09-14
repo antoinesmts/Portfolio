@@ -1,5 +1,14 @@
 [
   {
+    "title": "Analyse de la segmentation client",
+    "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
+    "image": "../images/projets/analyse-segmentation-client/RFM-Power-BI.png",
+    "categories": [
+      "Power BI"
+    ],
+    "url": "analyse-segmentation-client"
+  },
+  {
     "title": "Automatisation de la veille des offres d'emploi",
     "description": "Automatisation de la collecte et du scoring des offres d'emploi via IA, intégrant n8n, scraping, bases SQL et une application no-code.",
     "image": "../images/projets/job-scrapper/job-scrapper-n8n.png",
@@ -42,15 +51,6 @@
     "url": "rfm-analysis"
   },
   {
-    "title": "Analyse de la segmentation client",
-    "description": "Tableau de bord Power BI permettant l'analyse de la segmentation client.",
-    "image": "../images/projets/analyse-segmentation-client/RFM-Power-BI.png",
-    "categories": [
-      "Power BI"
-    ],
-    "url": "analyse-segmentation-client"
-  },
-  {
     "title": "BBC Sounds to Spotify Playlist",
     "description": "Ce script Python permet de récupérer la playlist d’un programme BBC Sounds et de l’importer dans une playlist Spotify.",
     "image": "../images/projets/bbc-sounds-spotify/BBC-to-Spotify.png",
@@ -60,15 +60,5 @@
       "IA"
     ],
     "url": "bbc-sounds-spotify"
-  },
-  {
-    "title": "Test Template Project",
-    "description": "Un projet de test pour valider le template et vérifier que tous les champs fonctionnent correctement avec le système de build automatisé.",
-    "image": "../images/projets/portfolio/portfolio-preview.png",
-    "categories": [
-      "Test",
-      "Template"
-    ],
-    "url": "test-template"
   }
 ]

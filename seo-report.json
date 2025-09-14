@@ -1,9 +1,9 @@
 {
-  "generated": "2025-09-14T20:39:01.501Z",
+  "generated": "2025-09-14T20:46:31.801Z",
   "summary": {
-    "totalProjects": 7,
+    "totalProjects": 6,
     "publishedProjects": 6,
-    "featuredProjects": 0,
+    "featuredProjects": 1,
     "averageReadingTime": 3,
     "averageComplexity": 2
   },
@@ -34,13 +34,13 @@
     "longTitles": 0,
     "shortDescriptions": 3,
     "categoriesDistribution": {
+      "Power BI": 1,
       "Automatisation": 3,
       "n8n": 2,
       "IA": 3,
       "No-code": 1,
       "SQL": 2,
       "Vibe coding": 1,
-      "Power BI": 1,
       "Python": 1
     },
     "tagsUsage": {}

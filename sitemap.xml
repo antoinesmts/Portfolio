@@ -25,6 +25,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://antoinesmeets.com/projets/analyse-segmentation-client</loc>
+    <lastmod>2025-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://antoinesmeets.com/projets/job-scrapper</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>yearly</changefreq>
@@ -44,12 +50,6 @@
   </url>
   <url>
     <loc>https://antoinesmeets.com/projets/rfm-analysis</loc>
-    <lastmod>2025-09-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://antoinesmeets.com/projets/analyse-segmentation-client</loc>
     <lastmod>2025-09-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
