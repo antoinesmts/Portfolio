@@ -7,9 +7,46 @@
  * It handles environment setup, builds the portfolio, and prepares for deployment.
  */
 
-const fs = require('fs-extra');
 const path = require('path');
-const chalk = require('chalk');
+const fs = require('fs').promises;
+
+// Simple console colors without external dependency
+const colors = {
+  blue: (text) => `\x1b[34m${text}\x1b[0m`,
+  green: (text) => `\x1b[32m${text}\x1b[0m`,
+  red: (text) => `\x1b[31m${text}\x1b[0m`,
+  yellow: (text) => `\x1b[33m${text}\x1b[0m`,
+  cyan: (text) => `\x1b[36m${text}\x1b[0m`,
+  bold: (text) => `\x1b[1m${text}\x1b[0m`
+};
+
+// Simple fs-extra replacements
+const fsExtra = {
+  pathExists: async (path) => {
+    try {
+      await fs.access(path);
+      return true;
+    } catch {
+      return false;
+    }
+  },
+  ensureDir: async (path) => {
+    await fs.mkdir(path, { recursive: true });
+  },
+  remove: async (path) => {
+    await fs.rm(path, { recursive: true, force: true });
+  },
+  copy: async (src, dest) => {
+    await fs.cp(src, dest, { recursive: true });
+  },
+  readdir: fs.readdir,
+  stat: fs.stat,
+  readFile: fs.readFile,
+  readJson: async (path) => {
+    const content = await fs.readFile(path, 'utf-8');
+    return JSON.parse(content);
+  }
+};
 
 // Set production environment
 process.env.NODE_ENV = 'production';
@@ -20,7 +57,7 @@ class ProductionBuilder {
     this.buildSystemDir = path.join(this.rootDir, 'build-system');
     this.outputDir = path.join(this.rootDir, '_site');
 
-    console.log(chalk.blue('🚀 Starting production build for GitHub Actions...'));
+    console.log(colors.blue('🚀 Starting production build for GitHub Actions...'));
     console.log(`   Root directory: ${this.rootDir}`);
     console.log(`   Build system: ${this.buildSystemDir}`);
     console.log(`   Output directory: ${this.outputDir}`);
@@ -43,25 +80,25 @@ class ProductionBuilder {
       // Step 5: Validate output
       await this.validateOutput();
 
-      console.log(chalk.green('\n✅ Production build completed successfully!'));
+      console.log(colors.green('\n✅ Production build completed successfully!'));
 
     } catch (error) {
-      console.error(chalk.red('\n❌ Production build failed:'));
-      console.error(chalk.red(error.message));
+      console.error(colors.red('\n❌ Production build failed:'));
+      console.error(colors.red(error.message));
       console.error(error.stack);
       process.exit(1);
     }
   }
 
   async validateEnvironment() {
-    console.log(chalk.blue('\n🔍 Validating environment...'));
+    console.log(colors.blue('\n🔍 Validating environment...'));
 
     // Check Node.js version
     const nodeVersion = process.version;
     console.log(`   Node.js version: ${nodeVersion}`);
 
     // Check if build system exists
-    if (!await fs.pathExists(this.buildSystemDir)) {
+    if (!await fsExtra.pathExists(this.buildSystemDir)) {
       throw new Error('Build system directory not found');
     }
 
@@ -69,29 +106,29 @@ class ProductionBuilder {
     const packageJsonPath = path.join(this.buildSystemDir, 'package.json');
     const nodeModulesPath = path.join(this.buildSystemDir, 'node_modules');
 
-    if (!await fs.pathExists(packageJsonPath)) {
+    if (!await fsExtra.pathExists(packageJsonPath)) {
       throw new Error('Build system package.json not found');
     }
 
-    if (!await fs.pathExists(nodeModulesPath)) {
+    if (!await fsExtra.pathExists(nodeModulesPath)) {
       throw new Error('Build system dependencies not installed. Run: cd build-system && npm install');
     }
 
     // Check if projects exist
     const projectsDir = path.join(this.rootDir, 'projets');
-    if (!await fs.pathExists(projectsDir)) {
-      console.warn(chalk.yellow('⚠️  No projects directory found'));
+    if (!await fsExtra.pathExists(projectsDir)) {
+      console.warn(colors.yellow('⚠️  No projects directory found'));
     }
 
-    console.log(chalk.green('   ✅ Environment validation passed'));
+    console.log(colors.green('   ✅ Environment validation passed'));
   }
 
   async cleanBuild() {
-    console.log(chalk.blue('\n🧹 Cleaning previous build...'));
+    console.log(colors.blue('\n🧹 Cleaning previous build...'));
 
     // Remove output directory if it exists
-    if (await fs.pathExists(this.outputDir)) {
-      await fs.remove(this.outputDir);
+    if (await fsExtra.pathExists(this.outputDir)) {
+      await fsExtra.remove(this.outputDir);
       console.log('   ✅ Removed previous _site directory');
     }
 
@@ -105,43 +142,59 @@ class ProductionBuilder {
     ];
 
     for (const file of filesToClean) {
-      if (await fs.pathExists(file)) {
-        await fs.remove(file);
+      if (await fsExtra.pathExists(file)) {
+        await fsExtra.remove(file);
         console.log(`   ✅ Removed ${path.basename(file)}`);
       }
     }
   }
 
   async runBuildSystem() {
-    console.log(chalk.blue('\n⚙️  Running automated build system...'));
+    console.log(colors.blue('\n⚙️  Running automated build system...'));
 
-    // Change to build system directory
-    const originalCwd = process.cwd();
-    process.chdir(this.buildSystemDir);
+    const { spawn } = require('child_process');
 
-    try {
-      // Import and run the build system
-      const PortfolioBuildSystem = require(path.join(this.rootDir, 'build-system', 'build.js'));
-      const buildSystem = new PortfolioBuildSystem();
+    return new Promise((resolve, reject) => {
+      const buildProcess = spawn('node', ['build.js'], {
+        cwd: this.buildSystemDir,
+        stdio: 'pipe',
+        env: { ...process.env, NODE_ENV: 'production' }
+      });
 
-      // Run the build
-      await buildSystem.build();
+      let stdout = '';
+      let stderr = '';
 
-      console.log(chalk.green('   ✅ Build system completed successfully'));
+      buildProcess.stdout.on('data', (data) => {
+        stdout += data.toString();
+        // Forward output to console
+        process.stdout.write(data);
+      });
 
-    } catch (error) {
-      throw new Error(`Build system failed: ${error.message}`);
-    } finally {
-      // Restore original working directory
-      process.chdir(originalCwd);
-    }
+      buildProcess.stderr.on('data', (data) => {
+        stderr += data.toString();
+        process.stderr.write(data);
+      });
+
+      buildProcess.on('close', (code) => {
+        if (code === 0) {
+          console.log(colors.green('   ✅ Build system completed successfully'));
+          resolve();
+        } else {
+          reject(new Error(`Build system failed with exit code ${code}\nstderr: ${stderr}`));
+        }
+      });
+
+      buildProcess.on('error', (error) => {
+        reject(new Error(`Failed to start build system: ${error.message}`));
+      });
+    });
   }
 
   async prepareDeployment() {
-    console.log(chalk.blue('\n📦 Preparing deployment...'));
+    console.log(colors.blue('\n📦 Preparing deployment...'));
 
     // Create output directory
-    await fs.ensureDir(this.outputDir);
+    await fsExtra.ensureDir(this.outputDir);
 
     // Copy main site files
     const staticFiles = [
@@ -155,11 +208,11 @@ class ProductionBuilder {
       const sourcePath = path.join(this.rootDir, file);
       const targetPath = path.join(this.outputDir, file);
 
-      if (await fs.pathExists(sourcePath)) {
-        await fs.copy(sourcePath, targetPath);
+      if (await fsExtra.pathExists(sourcePath)) {
+        await fsExtra.copy(sourcePath, targetPath);
         console.log(`   ✅ Copied ${file}`);
       } else {
-        console.warn(chalk.yellow(`   ⚠️  ${file} not found, skipping`));
+        console.warn(colors.yellow(`   ⚠️  ${file} not found, skipping`));
       }
     }
 
@@ -167,8 +220,8 @@ class ProductionBuilder {
     const projectsSource = path.join(this.rootDir, 'projets');
     const projectsTarget = path.join(this.outputDir, 'projets');
 
-    if (await fs.pathExists(projectsSource)) {
-      await fs.copy(projectsSource, projectsTarget);
+    if (await fsExtra.pathExists(projectsSource)) {
+      await fsExtra.copy(projectsSource, projectsTarget);
       console.log('   ✅ Copied projects directory');
     }
 
@@ -182,17 +235,17 @@ class ProductionBuilder {
       const sourcePath = path.join(this.rootDir, file);
       const targetPath = path.join(this.outputDir, file);
 
-      if (await fs.pathExists(sourcePath)) {
-        await fs.copy(sourcePath, targetPath);
+      if (await fsExtra.pathExists(sourcePath)) {
+        await fsExtra.copy(sourcePath, targetPath);
         console.log(`   ✅ Copied ${file}`);
       }
     }
 
-    console.log(chalk.green('   ✅ Deployment preparation completed'));
+    console.log(colors.green('   ✅ Deployment preparation completed'));
   }
 
   async validateOutput() {
-    console.log(chalk.blue('\n🔍 Validating build output...'));
+    console.log(colors.blue('\n🔍 Validating build output...'));
 
     // Check essential files
     const requiredFiles = [
@@ -204,23 +257,23 @@ class ProductionBuilder {
 
     for (const file of requiredFiles) {
       const filePath = path.join(this.outputDir, file);
-      if (!await fs.pathExists(filePath)) {
+      if (!await fsExtra.pathExists(filePath)) {
         throw new Error(`Required file missing: ${file}`);
       }
     }
 
     // Check if we have project HTML files
     const projectsDir = path.join(this.outputDir, 'projets');
-    const projectDirs = await fs.readdir(projectsDir);
+    const projectDirs = await fsExtra.readdir(projectsDir);
     const htmlFiles = [];
 
     for (const dir of projectDirs) {
       const dirPath = path.join(projectsDir, dir);
-      const stat = await fs.stat(dirPath);
+      const stat = await fsExtra.stat(dirPath);
 
       if (stat.isDirectory()) {
         const htmlFile = path.join(dirPath, 'index.html');
-        if (await fs.pathExists(htmlFile)) {
+        if (await fsExtra.pathExists(htmlFile)) {
           htmlFiles.push(dir);
         }
       }
@@ -230,9 +283,9 @@ class ProductionBuilder {
 
     // Validate JSON structure
     const indexJsonPath = path.join(this.outputDir, 'projets', 'index.json');
-    if (await fs.pathExists(indexJsonPath)) {
+    if (await fsExtra.pathExists(indexJsonPath)) {
       try {
-        const indexData = await fs.readJson(indexJsonPath);
+        const indexData = await fsExtra.readJson(indexJsonPath);
         const projectCount = Array.isArray(indexData) ? indexData.length :
                             indexData.projects ? indexData.projects.length : 0;
         console.log(`   ✅ Project index contains ${projectCount} projects`);
@@ -243,27 +296,27 @@ class ProductionBuilder {
 
     // Check sitemap
     const sitemapPath = path.join(this.outputDir, 'sitemap.xml');
-    if (await fs.pathExists(sitemapPath)) {
-      const sitemap = await fs.readFile(sitemapPath, 'utf-8');
+    if (await fsExtra.pathExists(sitemapPath)) {
+      const sitemap = await fsExtra.readFile(sitemapPath, 'utf-8');
       const urlCount = (sitemap.match(/<loc>/g) || []).length;
       console.log(`   ✅ Sitemap contains ${urlCount} URLs`);
     }
 
-    console.log(chalk.green('   ✅ Output validation passed'));
+    console.log(colors.green('   ✅ Output validation passed'));
   }
 
   async printBuildSummary() {
-    console.log('\n' + chalk.cyan('📊 Production Build Summary:'));
+    console.log('\n' + colors.cyan('📊 Production Build Summary:'));
 
     try {
       // Count files in output directory
       const countFiles = async (dir) => {
         let count = 0;
-        const items = await fs.readdir(dir);
+        const items = await fsExtra.readdir(dir);
 
         for (const item of items) {
           const itemPath = path.join(dir, item);
-          const stat = await fs.stat(itemPath);
+          const stat = await fsExtra.stat(itemPath);
 
           if (stat.isDirectory()) {
             count += await countFiles(itemPath);
@@ -277,26 +330,26 @@ class ProductionBuilder {
       const totalFiles = await countFiles(this.outputDir);
       const outputSize = await this.getDirectorySize(this.outputDir);
 
-      console.log(`   Total files: ${chalk.bold(totalFiles)}`);
-      console.log(`   Output size: ${chalk.bold(this.formatBytes(outputSize))}`);
-      console.log(`   Output directory: ${chalk.bold(this.outputDir)}`);
+      console.log(`   Total files: ${colors.bold(totalFiles)}`);
+      console.log(`   Output size: ${colors.bold(this.formatBytes(outputSize))}`);
+      console.log(`   Output directory: ${colors.bold(this.outputDir)}`);
 
       // Build timing
-      console.log(`   Environment: ${chalk.bold(process.env.NODE_ENV || 'development')}`);
-      console.log(`   Node.js: ${chalk.bold(process.version)}`);
+      console.log(`   Environment: ${colors.bold(process.env.NODE_ENV || 'development')}`);
+      console.log(`   Node.js: ${colors.bold(process.version)}`);
 
     } catch (error) {
-      console.warn(chalk.yellow('   Could not generate complete summary'));
+      console.warn(colors.yellow('   Could not generate complete summary'));
     }
   }
 
   async getDirectorySize(dir) {
     let size = 0;
-    const items = await fs.readdir(dir);
+    const items = await fsExtra.readdir(dir);
 
     for (const item of items) {
       const itemPath = path.join(dir, item);
-      const stat = await fs.stat(itemPath);
+      const stat = await fsExtra.stat(itemPath);
 
       if (stat.isDirectory()) {
         size += await this.getDirectorySize(itemPath);
@@ -323,11 +376,11 @@ if (require.main === module) {
   builder.build()
     .then(() => builder.printBuildSummary())
     .then(() => {
-      console.log(chalk.green('\n🎉 Ready for deployment!'));
+      console.log(colors.green('\n🎉 Ready for deployment!'));
       process.exit(0);
     })
     .catch(error => {
-      console.error(chalk.red('\n💥 Build failed:'), error.message);
+      console.error(colors.red('\n💥 Build failed:'), error.message);
       process.exit(1);
     });
 }
