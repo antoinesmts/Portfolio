@@ -64,12 +64,3 @@ playlist_name = "BBC 6 Music - Gilles Peterson (22/08/2023)"
 tracks = get_bbc_tracks(bbc_url)
 print(f"Titres trouvés : {len(tracks)}")
 create_spotify_playlist(tracks, playlist_name)
-```
-# Utilisation du script
-bbc_url = "https://www.bbc.co.uk/sounds/play/m001p8t7"  # URL de l'émission
-playlist_name = "BBC 6 Music - Gilles Peterson (22/08/2023)"
-
-tracks = get_bbc_tracks(bbc_url)
-print(f"Titres trouvés : {len(tracks)}")
-create_spotify_playlist(tracks, playlist_name)
-```

@@ -1,58 +1,70 @@
-name: Deploy Website
+name: Deploy Portfolio
 
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  NODE_ENV: production
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
-    
+
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '24.2.0'
-    
-    - name: Cache dependencies
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.npm
-          node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-    
-    - name: Install dependencies with fallback
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: 'build-system/package-lock.json'
+
+    - name: Install build system dependencies
       run: |
-        npm config set registry https://registry.npmjs.org
-        n=0
-        until [ "$n" -ge 2 ]
-        do
-          npm install -g @11ty/eleventy --no-audit --prefer-offline && break
-          n=$((n+1))
-          sleep 5
-          npm config set registry https://registry.npmmirror.com  # Fallback mirror
-        done
-        npm install markdown-it markdown-it-front-matter fs-extra --no-audit --prefer-offline
-    
-    - name: Build site
+        cd build-system
+        npm ci --only=production --no-audit
+
+    - name: Validate projects
       run: |
-        mkdir -p _site
-        cp -r css js images _site/
-        node .github/scripts/build.js
-    
-    - name: Deploy to FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        cd build-system
+        npm run validate
+      continue-on-error: true
+
+    - name: Build portfolio with automated system
+      run: |
+        node .github/scripts/build-production.js
+
+    - name: Deploy to FTP (Production only)
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: SamKirkland/FTP-Deploy-Action@4.3.4
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./_site/
         server-dir: ${{ secrets.FTP_SERVER_DIR }}/
+        dry-run: false
+        exclude: |
+          **/.git/**
+          **/node_modules/**
+          **/build-system/**
+          **/*.log
+          **/.DS_Store
+
+    - name: Upload build artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: portfolio-build
+        path: |
+          _site/
+          seo-report.json
+          projets/validation-report.json
+        retention-days: 30

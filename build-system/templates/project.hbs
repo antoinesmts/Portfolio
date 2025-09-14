@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>{{seo_title}} - Antoine Smeets Portfolio</title>
+    <meta name="title" content="{{seo_title}} - Antoine Smeets Portfolio">
+    <meta name="description" content="{{seo_description}}">
+    <meta name="keywords" content="{{#each keywords}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}">
+    <meta name="author" content="Antoine Smeets">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{canonical_url}}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{{og_type}}">
+    <meta property="og:url" content="{{canonical_url}}">
+    <meta property="og:title" content="{{og_title}}">
+    <meta property="og:description" content="{{og_description}}">
+    {{#if og_image}}
+    <meta property="og:image" content="{{baseUrl}}/{{og_image}}">
+    <meta property="og:image:alt" content="{{hero_alt}}">
+    {{/if}}
+    <meta property="og:site_name" content="Antoine Smeets Portfolio">
+    <meta property="og:locale" content="{{#if (eq language 'fr')}}fr_FR{{else}}en_US{{/if}}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="{{twitter_card}}">
+    <meta property="twitter:url" content="{{canonical_url}}">
+    <meta property="twitter:title" content="{{twitter_title}}">
+    <meta property="twitter:description" content="{{twitter_description}}">
+    {{#if twitter_image}}
+    <meta property="twitter:image" content="{{baseUrl}}/{{twitter_image}}">
+    {{/if}}
+
+    <!-- Article Meta -->
+    <meta property="article:published_time" content="{{date}}T00:00:00Z">
+    <meta property="article:modified_time" content="{{last_updated}}T00:00:00Z">
+    <meta property="article:author" content="Antoine Smeets">
+    {{#each categories}}
+    <meta property="article:section" content="{{this}}">
+    {{/each}}
+    {{#each tags}}
+    <meta property="article:tag" content="{{this}}">
+    {{/each}}
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/jpg" href="../../images/favicon.ico"/>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "{{schema_type}}",
+        "name": "{{title}}",
+        "description": "{{description}}",
+        "url": "{{canonical_url}}",
+        "author": {
+            "@type": "Person",
+            "name": "Antoine Smeets",
+            "url": "{{baseUrl}}"
+        },
+        "datePublished": "{{date}}T00:00:00Z",
+        "dateModified": "{{last_updated}}T00:00:00Z",
+        {{#if hero_image}}
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{baseUrl}}/{{hero_image}}",
+            "alt": "{{hero_alt}}"
+        },
+        {{/if}}
+        {{#if (eq schema_type 'SoftwareApplication')}}
+        "applicationCategory": "{{application_category}}",
+        "operatingSystem": "{{operating_system}}",
+        {{#if programming_language}}
+        "programmingLanguage": "{{programming_language}}",
+        {{/if}}
+        {{#if github_url}}
+        "codeRepository": "{{github_url}}",
+        {{/if}}
+        {{/if}}
+        "keywords": [{{#each keywords}}"{{this}}"{{#unless @last}}, {{/unless}}{{/each}}],
+        "genre": [{{#each categories}}"{{this}}"{{#unless @last}}, {{/unless}}{{/each}}],
+        "inLanguage": "{{language}}"
+    }
+    </script>
+
+    {{#each alternate_languages}}
+    <link rel="alternate" hreflang="{{@key}}" href="{{this}}">
+    {{/each}}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="../../">Antoine Smeets</a></div>
+                <ul class="nav-links">
+                    <li><a href="../../">Accueil</a></li>
+                    <li><a href="../../#projets">Projets</a></li>
+                    <li><a href="../../#a-propos">À propos</a></li>
+                    <li><a href="../../#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-page">
+        <div class="container">
+            <article class="project-detail" itemscope itemtype="https://schema.org/{{schema_type}}">
+                <nav aria-label="Breadcrumb">
+                    <a href="../../#projets" class="back-link">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        <span>Retour aux projets</span>
+                    </a>
+                </nav>
+
+                <header class="project-header">
+                    <h1 itemprop="name">{{title}}</h1>
+
+                    <div class="project-meta">
+                        {{#if date}}
+                        <div class="project-date">
+                            <time datetime="{{date}}" itemprop="datePublished">{{formatDate date}}</time>
+                            {{#if duration}}
+                            <span class="duration"> • Durée: {{duration}}</span>
+                            {{/if}}
+                        </div>
+                        {{/if}}
+
+                        {{#if categories}}
+                        <div class="project-categories" role="list" aria-label="Catégories du projet">
+                            {{#each categories}}
+                            <span class="project-category-tag" role="listitem" itemprop="genre">{{this}}</span>
+                            {{/each}}
+                        </div>
+                        {{/if}}
+                    </div>
+
+                    {{#if (or tags tech_stack)}}
+                    <div class="project-tags" role="list" aria-label="Technologies utilisées">
+                        {{#each tech_stack}}
+                        <span class="project-tag tech-tag" role="listitem" itemprop="programmingLanguage">{{this}}</span>
+                        {{/each}}
+                        {{#each tags}}
+                        <span class="project-tag" role="listitem" itemprop="keywords">{{this}}</span>
+                        {{/each}}
+                    </div>
+                    {{/if}}
+
+                    {{#if (or github_url demo_url documentation_url)}}
+                    <div class="project-links">
+                        {{#if github_url}}
+                        <a href="{{github_url}}" target="_blank" rel="noopener noreferrer" class="btn secondary" itemprop="codeRepository">
+                            <i class="fab fa-github" aria-hidden="true"></i> Code Source
+                        </a>
+                        {{/if}}
+                        {{#if demo_url}}
+                        <a href="{{demo_url}}" target="_blank" rel="noopener noreferrer" class="btn primary" itemprop="url">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Démo Live
+                        </a>
+                        {{/if}}
+                        {{#if documentation_url}}
+                        <a href="{{documentation_url}}" target="_blank" rel="noopener noreferrer" class="btn secondary">
+                            <i class="fas fa-book" aria-hidden="true"></i> Documentation
+                        </a>
+                        {{/if}}
+                    </div>
+                    {{/if}}
+                </header>
+
+                {{#if hero_image}}
+                <div class="project-featured-image">
+                    <img src="../../{{hero_image}}" alt="{{hero_alt}}" itemprop="image" loading="lazy">
+                </div>
+                {{/if}}
+
+                <div class="project-content" itemprop="description">
+                    {{{content}}}
+                </div>
+
+                {{#if (gt reading_time 0)}}
+                <div class="project-stats">
+                    <small class="reading-time">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        Temps de lecture: {{reading_time}} min
+                        {{#if word_count}} • {{word_count}} mots{{/if}}
+                    </small>
+                </div>
+                {{/if}}
+
+                <!-- Hidden structured data -->
+                <meta itemprop="author" content="Antoine Smeets">
+                <meta itemprop="dateModified" content="{{last_updated}}">
+                {{#if client}}
+                <meta itemprop="client" content="{{client}}">
+                {{/if}}
+
+                <nav class="project-navigation" aria-label="Navigation du projet">
+                    <a href="../../#projets" class="btn secondary">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        <span>Retour aux projets</span>
+                    </a>
+                </nav>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; {{currentYear}} Antoine Smeets</p>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+
+    <!-- Analytics and performance monitoring could go here -->
+    {{#if (eq NODE_ENV 'production')}}
+    <!-- Google Analytics or other tracking code -->
+    {{/if}}
+</body>
+</html>

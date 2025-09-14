@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio d'Antoine Smeets - Développeur spécialisé en valorisation de données, automatisation et solutions no-code. Expertise en SQL, Power BI, Python, n8n et IA.">
+    <meta name="keywords" content="développeur, data, automatisation, SQL, Power BI, Python, n8n, no-code, IA">
+    <meta name="author" content="Antoine Smeets">
+    <meta property="og:title" content="Antoine Smeets - Portfolio">
+    <meta property="og:description" content="Développeur spécialisé en valorisation de données et automatisation">
+    <meta property="og:type" content="website">
     <title>Antoine Smeets - Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,7 +37,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" role="banner">
         <div class="container">
             <div class="hero-content">
                 <h1>Bonjour, je suis <span class="highlight">Antoine</span></h1>
@@ -44,28 +50,28 @@
         </div>
     </section>
 
-    <section id="projets" class="projects">
+    <section id="projets" class="projects" role="main">
         <div class="container">
             <h2 class="section-title">Mes Projets</h2>
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="Automatisation">Automatisation</button>
-                <button class="filter-btn" data-filter="Python">Python</button>
-                <button class="filter-btn" data-filter="n8n">n8n</button>
-                <button class="filter-btn" data-filter="power-bi">Power BI</button>
-                <button class="filter-btn" data-filter="IA">IA</button>
-                <button class="filter-btn" data-filter="vibe-coding">Vibe coding</button>
-                <button class="filter-btn" data-filter="no-code">No-code</button>
+            <div class="filter-container" role="tablist" aria-label="Filtres de projets">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="projects-container">Tous</button>
+                <button class="filter-btn" data-filter="Automatisation" role="tab" aria-selected="false" aria-controls="projects-container">Automatisation</button>
+                <button class="filter-btn" data-filter="Python" role="tab" aria-selected="false" aria-controls="projects-container">Python</button>
+                <button class="filter-btn" data-filter="n8n" role="tab" aria-selected="false" aria-controls="projects-container">n8n</button>
+                <button class="filter-btn" data-filter="power-bi" role="tab" aria-selected="false" aria-controls="projects-container">Power BI</button>
+                <button class="filter-btn" data-filter="IA" role="tab" aria-selected="false" aria-controls="projects-container">IA</button>
+                <button class="filter-btn" data-filter="vibe-coding" role="tab" aria-selected="false" aria-controls="projects-container">Vibe coding</button>
+                <button class="filter-btn" data-filter="no-code" role="tab" aria-selected="false" aria-controls="projects-container">No-code</button>
             </div>
-            <div class="projects-grid" id="projects-container">
+            <div class="projects-grid" id="projects-container" role="main" aria-label="Liste des projets">
                 <!-- Les projets seront chargés dynamiquement ici via JavaScript -->
             </div>
         </div>
     </section>
 
-    <section id="a-propos" class="about">
+    <section id="a-propos" class="about" role="region" aria-labelledby="about-title">
         <div class="container">
-            <h2 class="section-title">À propos</h2>
+            <h2 id="about-title" class="section-title">À propos</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>Développeur et créateur de solutions numériques spécialisé en valorisation de la donnée et en automatisation, je transforme les informations brutes en leviers stratégiques pour les entreprises. Je combine analytique et esthétique afin de construire des tableaux de bord intuitifs et des rapports clairs pour révéler des insights actionnables. Mon expertise couvre toute la chaîne de valeur des données, de leur collecte à leur mise en récit visuel.
@@ -103,9 +109,9 @@
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="contact" class="contact" role="region" aria-labelledby="contact-title">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
+            <h2 id="contact-title" class="section-title">Contact</h2>
             <div class="contact-content centered-contact">
                 <div class="contact-item">
                     <i class="fab fa-linkedin"></i>

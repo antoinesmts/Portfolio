@@ -140,16 +140,7 @@ nav {
     position: relative;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* background: linear-gradient(135deg, var(--white) 0%, transparent 100%);*/
-    z-index: 1;
-}
+/* Removed unused hero::before pseudo-element */
 
 .hero .container {
     position: relative;
@@ -343,7 +334,7 @@ nav {
     background-color: #3776ab;
 }
 
-.tag-nbn {
+.tag-n8n {
     background-color: #8a2be2;
 }
 
@@ -452,17 +443,7 @@ nav {
     background-color: var(--background-color);
 }
 
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 50px;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+/* Simplified contact layout - using centered approach */
 
 .centered-contact {
     display: flex;
@@ -514,33 +495,21 @@ nav {
     color: var(--primary-color);
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.form-group label {
-    font-weight: 500;
-}
-
-.form-group input, .form-group textarea {
-    padding: 12px;
+/* Error message styles */
+.error-message {
+    background-color: #fee;
+    color: #d63384;
+    padding: 20px;
     border-radius: var(--border-radius);
-    border: 1px solid var(--light-gray);
-    font-family: inherit;
-    transition: var(--transition);
+    border: 1px solid #f5c2c7;
+    text-align: center;
+    margin: 20px 0;
 }
 
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
+[data-theme="dark"] .error-message {
+    background-color: #2d1b1e;
+    color: #ea868f;
+    border-color: #842029;
 }
 
 /* Project Detail Pages */
@@ -959,23 +928,6 @@ nav {
     }
 }
 
-@media screen and (max-width: 768px) {
-    .project-title {
-        font-size: 2rem;
-    }
-    
-    .project-tags {
-        justify-content: center;
-    }
-    
-    .related-projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .project-content {
-        padding: 0 20px;
-    }
-}
 
 [data-theme="dark"] .project-content pre {
     background-color: #2d3748;
@@ -1043,7 +995,7 @@ footer {
         text-align: center;
     }
     
-    .about-content, .contact-content {
+    .about-content {
         grid-template-columns: 1fr;
     }
 

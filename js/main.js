@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Theme toggle functionality
+    // Cache DOM elements for better performance
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectsContainer = document.getElementById('projects-container');
     
     // Check for saved theme preference or default to 'light' mode
     const currentTheme = localStorage.getItem('theme') || 
@@ -25,9 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Mobile navigation
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
 
     burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
@@ -45,13 +47,16 @@ document.addEventListener('DOMContentLoaded', function() {
     loadProjects();
 
     // Filtrage des projets
-    const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Retirer la classe active de tous les boutons
-            filterBtns.forEach(btn => btn.classList.remove('active'));
-            // Ajouter la classe active au bouton cliqué
+            // Retirer la classe active de tous les boutons et mettre à jour ARIA
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+            // Ajouter la classe active au bouton cliqué et mettre à jour ARIA
             btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
             
             const filter = btn.getAttribute('data-filter');
             filterProjects(filter);
@@ -59,28 +64,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Fonction pour charger les projets
+// Fonction pour charger les projets avec gestion d'erreurs améliorée
 async function loadProjects() {
+    const projectsContainer = document.getElementById('projects-container');
+
     try {
         const response = await fetch('projets/index.json');
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const projects = await response.json();
-        
-        const projectsContainer = document.getElementById('projects-container');
+
+        if (!Array.isArray(projects)) {
+            throw new Error('Format de données invalide');
+        }
+
         projectsContainer.innerHTML = '';
-        
+
         projects.forEach(project => {
-            const projectCard = createProjectCard(project);
-            projectsContainer.appendChild(projectCard);
+            try {
+                const projectCard = createProjectCard(project);
+                projectsContainer.appendChild(projectCard);
+            } catch (cardError) {
+                console.warn('Erreur lors de la création d\'une carte projet:', cardError, project);
+            }
         });
+
     } catch (error) {
         console.error('Erreur lors du chargement des projets:', error);
+        projectsContainer.innerHTML = '<div class="error-message">Erreur lors du chargement des projets. Veuillez réessayer plus tard.</div>';
     }
 }
 
 // Fonction pour créer une carte de projet
 function createProjectCard(project) {
-    const card = document.createElement('div');
+    const card = document.createElement('article');
     card.className = 'project-card';
+    card.setAttribute('role', 'article');
+    card.setAttribute('aria-labelledby', `project-title-${project.title.replace(/\s+/g, '-').toLowerCase()}`);
     // Conserver les catégories originales avec espaces pour l'affichage
     // et créer une version normalisée pour le filtrage
     const categoriesForFiltering = project.categories.map(cat => cat.replace(/\s+/g, '-')).join(' ');
@@ -93,6 +116,7 @@ function createProjectCard(project) {
     const img = document.createElement('img');
     img.src = project.image;
     img.alt = project.title;
+    img.loading = 'lazy';
     imageContainer.appendChild(img);
     
     const tagsContainer = document.createElement('div');
@@ -113,6 +137,7 @@ function createProjectCard(project) {
     
     const title = document.createElement('h3');
     title.className = 'project-title';
+    title.id = `project-title-${project.title.replace(/\s+/g, '-').toLowerCase()}`;
     title.textContent = project.title;
     content.appendChild(title);
     
@@ -171,9 +196,14 @@ function loadRelatedProjects() {
     // Get current project tags from the page
     const currentTags = Array.from(document.querySelectorAll('.project-tag')).map(tag => tag.textContent.trim());
     
-    // Load projects data
-    fetch('/projets/index.json')
-        .then(response => response.json())
+    // Load projects data with better error handling
+    fetch('projets/index.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(projects => {
             // Filter projects that share at least one tag with current project
             const relatedProjects = projects.filter(project => {
@@ -199,6 +229,9 @@ function loadRelatedProjects() {
         })
         .catch(error => {
             console.error('Erreur lors du chargement des projets similaires:', error);
+            if (relatedContainer) {
+                relatedContainer.innerHTML = '<div class="error-message">Erreur lors du chargement des projets similaires.</div>';
+            }
         });
 }
 

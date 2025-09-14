@@ -1,0 +1,44 @@
+{
+  "name": "portfolio-build-system",
+  "version": "1.0.0",
+  "description": "Automated build system for Antoine's portfolio projects",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch",
+    "clean": "node scripts/clean.js",
+    "migrate": "node scripts/migrate-projects.js",
+    "validate": "node scripts/validate-projects.js"
+  },
+  "keywords": [
+    "portfolio",
+    "markdown",
+    "static-site-generator",
+    "seo",
+    "automation"
+  ],
+  "author": "Antoine Smeets",
+  "license": "MIT",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.0.0",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-anchor": "^8.6.7",
+    "handlebars": "^4.7.8",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "slugify": "^1.6.6",
+    "sharp": "^0.33.2",
+    "chokidar": "^3.5.3",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1",
+    "date-fns": "^3.2.0",
+    "schema-dts": "^1.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
