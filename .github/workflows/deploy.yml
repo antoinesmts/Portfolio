@@ -9,11 +9,18 @@ on:
 env:
   NODE_ENV: production
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Wait for additional commits
+      run: sleep 120
+
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
