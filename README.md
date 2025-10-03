@@ -1,124 +1,192 @@
-# Site Web Portfolio Statique
+# Portfolio Antoine Smeets
 
-Ce projet est un site web statique qui présente des projets personnels. Les projets sont gérés via des fichiers Markdown et le site est déployé automatiquement via GitHub Actions.
+Portfolio personnel présentant mes projets en valorisation de données, automatisation et solutions no-code.
 
-## Fonctionnalités
+## 🚀 Aperçu
 
-- Affichage des projets sur la page d'accueil avec des étiquettes de catégories
-- Filtrage des projets par catégorie
-- Pages de détail générées à partir de fichiers Markdown
-- Déploiement automatique via GitHub Actions
+Site statique généré automatiquement à partir de fichiers Markdown, avec :
+- **SEO optimisé** : sitemap XML, structured data, Open Graph
+- **Déploiement automatique** via GitHub Actions
+- **Gestion dynamique** des projets et catégories
+- **Performance** : lazy loading, fichiers optimisés
 
-## Structure du projet
+## 📁 Structure du projet
 
 ```
-├── .github/
-│   ├── workflows/
-│   │   └── deploy.yml       # Configuration GitHub Actions
-│   └── scripts/
-│       └── build.js         # Script de génération du site
-├── css/
-│   └── style.css           # Styles du site
-├── images/                 # Images des projets
-├── js/
-│   └── main.js             # Scripts JavaScript
-├── projets/
-│   ├── index.json          # Liste des projets pour la page d'accueil
-│   └── *.md                # Fichiers Markdown des projets
-├── templates/
-│   └── project.html        # Template pour les pages de projet
-├── .gitignore              # Fichiers à ignorer par Git
-├── index.html              # Page d'accueil
-├── package.json            # Configuration npm
-└── README.md               # Documentation
+.
+├── build-system/           # Système de build automatisé
+│   ├── build.js           # Script principal
+│   ├── lib/               # Modules (markdown, SEO, tags...)
+│   ├── templates/         # Templates Handlebars
+│   └── README.md          # Documentation complète
+│
+├── projets/               # Projets du portfolio
+│   └── [slug]/
+│       └── index.md       # Contenu + frontmatter
+│
+├── css/                   # Styles
+├── js/                    # Scripts front-end
+├── images/                # Images
+├── index.html             # Page d'accueil
+└── .github/
+    └── workflows/
+        └── deploy.yml     # CI/CD GitHub Actions
 ```
 
-## Prérequis
+## 🛠️ Installation
 
-- Node.js (v14 ou supérieur)
+### Prérequis
+- Node.js 18+
 - npm ou yarn
-- Un compte GitHub pour le déploiement automatique
 
-## Installation et développement local
+### Configuration
+```bash
+# 1. Cloner le repo
+git clone https://github.com/votre-username/portfolio.git
+cd portfolio
 
-1. Clonez ce dépôt :
-   ```bash
-   git clone https://github.com/votre-nom/site-web-portfolio.git
-   cd site-web-portfolio
-   ```
+# 2. Installer les dépendances
+cd build-system
+npm install
+```
 
-2. Installez les dépendances :
-   ```bash
-   npm install
-   ```
+## 💻 Utilisation
 
-3. Lancez le serveur de développement :
-   ```bash
-   npm run dev
-   ```
+### Créer un nouveau projet
 
-4. Ouvrez votre navigateur à l'adresse http://localhost:3000
+1. **Créer le dossier projet** :
+```bash
+mkdir projets/nom-du-projet
+```
 
-## Ajout d'un nouveau projet
+2. **Créer le fichier `index.md`** avec ce frontmatter :
+```yaml
+---
+title: "Titre du projet"
+description: "Description SEO (120-160 caractères)"
+hero_image: "images/hero.png"
+date: "2025-01-15"
+status: "published"
+categories: ["Automatisation", "Python"]
+tags: ["API", "IA"]
+github_url: "https://github.com/..."  # optionnel
+---
 
-1. Créez un nouveau fichier Markdown dans le dossier `projets/` avec l'extension `.md`
-2. Ajoutez le front matter au début du fichier :
-   ```markdown
-   ---
-   title: Titre du projet
-   description: Description courte du projet
-   image: ../images/nom-image.jpg
-   date: YYYY-MM-DD
-   categories: [Catégorie1, Catégorie2]
-   ---
+# Contenu du projet
 
-   # Contenu du projet en Markdown
-   ```
+Votre contenu en Markdown...
+```
 
-3. Ajoutez l'image du projet dans le dossier `images/`
-4. Générez le site avec `npm run build` pour voir les changements
+3. **Builder le site** :
+```bash
+cd build-system
+npm run build
+```
 
-## Déploiement
+### Commandes disponibles
 
-### Configuration GitHub Actions
+```bash
+# Build complet
+npm run build
 
-Pour déployer automatiquement le site sur votre serveur d'hébergement, vous devez configurer les secrets GitHub suivants :
+# Mode développement (watch)
+npm run dev
 
-1. Dans votre dépôt GitHub, allez dans Settings > Secrets and variables > Actions
-2. Ajoutez les secrets suivants :
-   - `FTP_SERVER` : l'adresse de votre serveur FTP
-   - `FTP_USERNAME` : votre nom d'utilisateur FTP
-   - `FTP_PASSWORD` : votre mot de passe FTP
-   - `FTP_SERVER_DIR` : le répertoire de destination sur le serveur
+# Valider les projets
+npm run validate
+
+# Nettoyer les fichiers générés
+npm run clean
+
+# Migrer anciens projets (une fois)
+npm run migrate
+```
+
+## 🚢 Déploiement
+
+### Déploiement automatique (GitHub Actions)
+
+Le site se déploie automatiquement sur push vers `main`.
+
+**Configuration des secrets** :
+1. Aller dans Settings → Secrets → Actions
+2. Ajouter :
+   - `FTP_SERVER` : adresse du serveur FTP
+   - `FTP_USERNAME` : nom d'utilisateur
+   - `FTP_PASSWORD` : mot de passe
+   - `FTP_SERVER_DIR` : répertoire de destination
 
 ### Déploiement manuel
 
-Si vous préférez déployer manuellement :
+```bash
+# 1. Build de production
+cd build-system
+npm run build
 
-1. Générez le site :
-   ```bash
-   npm run build
-   ```
+# 2. Le site généré est dans _site/
+# 3. Déployer _site/ sur votre hébergement
+```
 
-2. Le site généré se trouve dans le dossier `_site/`
-3. Transférez le contenu de ce dossier sur votre serveur d'hébergement
+## 📝 Frontmatter complet
 
-## Personnalisation
+Tous les champs disponibles pour `index.md` :
 
-### Modification du design
+```yaml
+---
+# Obligatoire
+title: "Titre du projet"
+description: "Description (SEO optimal: 120-160 chars)"
+date: "2025-01-15"
 
-- Modifiez le fichier `css/style.css` pour changer l'apparence du site
-- Modifiez le fichier `templates/project.html` pour changer la structure des pages de projet
+# Images
+hero_image: "images/hero.png"          # Image principale
 
-### Modification de la page d'accueil
+# Organisation
+status: "published"                     # draft | published | archived
+featured: true                          # Mettre en avant
+categories: ["Cat1", "Cat2"]           # Catégories principales
+tags: ["tag1", "tag2"]                 # Tags secondaires
+tech_stack: ["Python", "Docker"]       # Technologies utilisées
 
-- Modifiez le fichier `index.html` pour changer la structure de la page d'accueil
+# Liens
+github_url: "https://github.com/..."
+demo_url: "https://demo.com"
 
-### Modification des catégories
+# SEO (auto-généré si omis)
+seo_title: "Titre SEO personnalisé"
+seo_description: "Description personnalisée"
+keywords: ["mot-clé1", "mot-clé2"]
 
-- Ajoutez ou modifiez les boutons de filtrage dans le fichier `index.html`
-- Ajoutez les styles correspondants dans `css/style.css`
+# Métadonnées
+duration: "2 semaines"
+client: "Personnel"
+---
+```
 
-## Licence
+## 🔧 Personnalisation
 
-Ce projet est sous licence MIT.
+### Modifier le design
+- **Styles** : éditer [`css/style.css`](css/style.css)
+- **Template projet** : éditer [`build-system/templates/project.hbs`](build-system/templates/project.hbs)
+- **Page d'accueil** : éditer [`index.html`](index.html)
+
+### Ajouter une fonctionnalité
+Consulter la [documentation complète du build system](build-system/README.md)
+
+## 📊 Fichiers générés automatiquement
+
+Le build génère :
+- `projets/index.json` - Index des projets
+- `projets/*/index.html` - Pages HTML des projets
+- `sitemap.xml` - Sitemap XML
+- `robots.txt` - Directives pour robots
+- `structured-data.json` - Schema.org
+- `seo-report.json` - Rapport SEO
+
+
+## 🔗 Liens utiles
+
+- [Documentation du build system](build-system/README.md)
+- [Guide de migration](build-system/QUICK-START.md)
+
+---

@@ -1,7 +1,21 @@
-# Dossiers générés
+# Dossiers générés par le build
 _site/
 node_modules/
-.claude
+build-system/node_modules/
+
+# Fichiers générés automatiquement
+projets/*/*.html
+projets/index.json
+projets/index-simple.json
+projets/tags-metadata.json
+seo-report.json
+social-media-data.json
+structured-data.json
+sitemap.xml
+robots.txt
+
+# Configuration Claude Code
+.claude/
 
 # Fichiers de dépendances
 package-lock.json
@@ -23,6 +37,8 @@ yarn-error.log*
 # Fichiers système
 .DS_Store
 Thumbs.db
+*.swp
+*~
 
 # Fichiers d'éditeur
 .idea/
@@ -33,5 +49,4 @@ Thumbs.db
 # Fichiers temporaires
 *.tmp
 *.temp
-
-projets/*/*.html
+.cache/
