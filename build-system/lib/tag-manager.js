@@ -99,22 +99,14 @@ class TagManager {
    * Generate filter buttons configuration
    */
   generateFilterConfig() {
-    // Combine categories and major tech stack items for filters
+    // Use only categories from markdown files for filters
     const filterItems = new Set([...this.allCategories]);
-
-    // Add popular tech stack items (used by 2+ projects)
-    this.allTechStack.forEach(tech => {
-      const count = this.techStats.get(tech) || 0;
-      if (count >= 2) {
-        filterItems.add(tech);
-      }
-    });
 
     // Convert to sorted array
     const sortedFilters = Array.from(filterItems).sort((a, b) => {
       // Sort by usage count (descending), then alphabetically
-      const countA = (this.categoryStats.get(a) || 0) + (this.techStats.get(a) || 0);
-      const countB = (this.categoryStats.get(b) || 0) + (this.techStats.get(b) || 0);
+      const countA = this.categoryStats.get(a) || 0;
+      const countB = this.categoryStats.get(b) || 0;
 
       if (countA !== countB) {
         return countB - countA;
