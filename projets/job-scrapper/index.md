@@ -6,7 +6,7 @@ description: >
 excerpt: >
   Système automatisé de collecte et scoring d'offres d'emploi via IA, n8n et application no-code pour une veille personnalisée...
 hero_image: ../images/projets/job-scrapper/0_job-scrapper-n8n.png
-date: 2025-10-04
+date: 2025-08-15
 status: published
 featured: true
 categories:
