@@ -323,24 +323,8 @@ nav {
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 500;
-    color: var(--white);
-}
-
-.tag-automatisation {
-    background-color: #4a6cf7;
-}
-
-.tag-python {
-    background-color: #3776ab;
-}
-
-.tag-n8n {
-    background-color: #8a2be2;
-}
-
-.tag-power-bi {
-    background-color: #f2c811;
-    color: var(--dark-gray);
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
 
 .project-content {
@@ -1039,12 +1023,12 @@ footer {
 }
 
 .tag-power-bi {
-    background-color: #f2c811;
+    background-color: #4a6cf7;
     color: #ffffff;
 }
 
 .tag-n8n {
-    background-color: #8a2be2;
+    background-color: #4a6cf7;
     color: #ffffff;
 }
 

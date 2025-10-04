@@ -201,7 +201,7 @@ class TagManager {
 
       css.push(`.tag-${normalizedName} {`);
       css.push(`    background-color: ${color};`);
-      css.push(`    color: ${this.getContrastColor(color)};`);
+      css.push(`    color: #ffffff;`);
       css.push(`}`);
       css.push('');
     });
@@ -213,15 +213,8 @@ class TagManager {
    * Get color for a tag
    */
   getTagColor(tag) {
-    const normalized = this.normalizeFilterName(tag);
-
-    // Use predefined colors if available
-    if (this.tagColors[normalized]) {
-      return this.tagColors[normalized];
-    }
-
-    // Generate a color based on the tag name
-    return this.generateColorFromString(tag);
+    // Use primary color for all tags to maintain consistency
+    return '#4a6cf7';
   }
 
   /**
