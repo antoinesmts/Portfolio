@@ -6,7 +6,7 @@ description: >
 excerpt: >
   Automatisation complète avec n8n pour récupérer les avis Google via DataforSEO, gérer les propriétés dans Airtable et stocker dans Supabase...
 hero_image: ../images/projets/scraping-avis-google/0_Avis-Google-N8N.png
-date: 2025-10-04
+date: 2025-09-01
 status: published
 featured: true
 categories:
