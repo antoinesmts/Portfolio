@@ -76,6 +76,8 @@ Plusieurs améliorations sont envisagées pour optimiser davantage le workflow :
 
 **Intégration de tests automatisés** : Ajout de vérifications automatiques de qualité du contenu généré (longueur, structure, densité SEO) avant validation humaine
 
+**Amélioration de la génération d'images** : Prendre appui sur les évoluations des intelligences artificielles en génération d'images afin d'améliorer le rendu des images et avoir une meilleure uniformisation des images.
+
 **Optimisation des performances** : Implémentation de caching pour les appels API répétitifs et parallélisation de certaines étapes du workflow
 
 **Extension multi-plateformes** : Adaptation du système pour publier automatiquement sur plusieurs canaux (LinkedIn, Twitter) en plus du portfolio
