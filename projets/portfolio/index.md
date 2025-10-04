@@ -6,7 +6,7 @@ description: >
 excerpt: >
   Portfolio web automatisé avec synchronisation markdown et GitHub Actions pour déploiement FTP sans CMS...
 hero_image: ../images/projets/portfolio/0_portfolio.png
-date: 2025-10-04
+date: 2025-08-01
 status: published
 featured: true
 categories:
